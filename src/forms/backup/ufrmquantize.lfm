@@ -1,0 +1,478 @@
+object frmQuantize: TfrmQuantize
+  Left = 380
+  Height = 562
+  Top = 180
+  Width = 860
+  Caption = 'GGUF Model Quantizer (llama-quantize)'
+  ClientHeight = 562
+  ClientWidth = 860
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pnlTopConfig: TPanel
+    Left = 0
+    Height = 312
+    Top = 0
+    Width = 860
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 312
+    ClientWidth = 860
+    TabOrder = 0
+    object gbFiles: TGroupBox
+      Left = 6
+      Height = 144
+      Top = 6
+      Width = 848
+      Align = alTop
+      BorderSpacing.Around = 6
+      Caption = ' Input / Output Files '
+      ClientHeight = 124
+      ClientWidth = 844
+      TabOrder = 0
+      object lblSourceModel: TLabel
+        Left = 12
+        Height = 15
+        Top = 6
+        Width = 155
+        Caption = 'Source Model (High-Bit/F16):'
+        ParentColor = False
+      end
+      object edtSourceModel: TEdit
+        Left = 12
+        Height = 23
+        Top = 24
+        Width = 730
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+        OnChange = edtSourceModelChange
+      end
+      object btnBrowseSource: TButton
+        Left = 748
+        Height = 25
+        Top = 23
+        Width = 84
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 1
+        OnClick = btnBrowseSourceClick
+      end
+      object lblTargetModel: TLabel
+        Left = 12
+        Height = 15
+        Top = 54
+        Width = 131
+        Caption = 'Output Quantized GGUF:'
+        ParentColor = False
+      end
+      object edtTargetModel: TEdit
+        Left = 12
+        Height = 23
+        Top = 72
+        Width = 640
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 2
+      end
+      object btnAutoTarget: TButton
+        Left = 658
+        Height = 25
+        Top = 71
+        Width = 84
+        Anchors = [akTop, akRight]
+        Caption = 'Auto Name'
+        TabOrder = 3
+        OnClick = btnAutoTargetClick
+      end
+      object btnBrowseTarget: TButton
+        Left = 748
+        Height = 25
+        Top = 71
+        Width = 84
+        Anchors = [akTop, akRight]
+        Caption = 'Save As...'
+        TabOrder = 4
+        OnClick = btnBrowseTargetClick
+      end
+      object lblSourceInfo: TLabel
+        Left = 12
+        Height = 15
+        Top = 100
+        Width = 259
+        Caption = 'Source: Select a model file to inspect architecture'
+        Font.Color = clNavy
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object gbOptions: TGroupBox
+      Left = 6
+      Height = 150
+      Top = 156
+      Width = 848
+      Align = alClient
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      BorderSpacing.Bottom = 6
+      Caption = ' Quantization Parameters '
+      ClientHeight = 130
+      ClientWidth = 844
+      TabOrder = 1
+      object lblQuantType: TLabel
+        Left = 12
+        Height = 15
+        Top = 6
+        Width = 107
+        Caption = 'Quantization Target:'
+        ParentColor = False
+      end
+      object cmbQuantType: TComboBox
+        Left = 12
+        Height = 23
+        Top = 24
+        Width = 190
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Q4_K_M (Recommended Balanced)'
+          'Q5_K_M (High Quality 5-bit)'
+          'Q8_0 (Near Lossless 8-bit)'
+          'Q6_K (High Quality 6-bit)'
+          'Q4_K_S (Compact 4-bit)'
+          'Q5_K_S (Compact 5-bit)'
+          'Q3_K_M (Medium 3-bit)'
+          'Q3_K_S (Small 3-bit)'
+          'Q2_K (Extreme 2-bit)'
+          'IQ4_NL (Importance Matrix 4-bit)'
+          'IQ4_XS (Extra Small 4-bit)'
+          'IQ3_M (High Quality 3-bit IQ)'
+          'IQ3_S (Small 3-bit IQ)'
+          'IQ2_M (Medium 2-bit IQ)'
+          'IQ2_S (Small 2-bit IQ)'
+          'IQ1_S (1.5-bit Ultra Compact)'
+          'Q4_0 (Standard Legacy)'
+          'Q4_1 (Legacy)'
+          'Q5_0 (Standard Legacy)'
+          'Q5_1 (Legacy)'
+        )
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'Q4_K_M (Recommended Balanced)'
+        OnChange = cmbQuantTypeChange
+      end
+      object lblThreads: TLabel
+        Left = 216
+        Height = 15
+        Top = 6
+        Width = 105
+        Caption = 'Threads (--threads):'
+        ParentColor = False
+      end
+      object seThreads: TSpinEdit
+        Left = 216
+        Height = 23
+        Top = 24
+        Width = 90
+        MaxValue = 128
+        MinValue = 1
+        TabOrder = 1
+        Value = 8
+      end
+      object lblIMatrix: TLabel
+        Left = 320
+        Height = 15
+        Top = 6
+        Width = 157
+        Caption = 'Importance Matrix (--imatrix):'
+        ParentColor = False
+      end
+      object edtIMatrix: TEdit
+        Left = 320
+        Height = 23
+        Top = 24
+        Width = 422
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 2
+      end
+      object btnBrowseIMatrix: TButton
+        Left = 748
+        Height = 25
+        Top = 23
+        Width = 84
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 3
+        OnClick = btnBrowseIMatrixClick
+      end
+      object chkLeaveOutputTensor: TCheckBox
+        Left = 12
+        Height = 19
+        Top = 60
+        Width = 324
+        Caption = 'Leave output.weight in FP16/FP32 (--leave-output-tensor)'
+        TabOrder = 4
+      end
+      object chkPure: TCheckBox
+        Left = 270
+        Height = 19
+        Top = 60
+        Width = 190
+        Caption = 'Pure quantization mode (--pure)'
+        TabOrder = 5
+      end
+      object lblExtraArgs: TLabel
+        Left = 12
+        Height = 15
+        Top = 90
+        Width = 90
+        Caption = 'Extra Parameters:'
+        ParentColor = False
+      end
+      object edtExtraArgs: TEdit
+        Left = 112
+        Height = 23
+        Top = 86
+        Width = 720
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 6
+      end
+    end
+  end
+  object pnlMiddleActions: TPanel
+    Left = 0
+    Height = 64
+    Top = 498
+    Width = 860
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 64
+    ClientWidth = 860
+    Color = 8741966
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object btnStartQuantize: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 10
+      Height = 44
+      Top = 10
+      Width = 126
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Start Quantization'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnStartQuantizeClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnCancelQuantize: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 146
+      Height = 44
+      Top = 10
+      Width = 123
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Cancel / Stop'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnCancelQuantizeClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnOpenOutputFolder: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 279
+      Height = 44
+      Top = 10
+      Width = 123
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Open Target Dir'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnOpenOutputFolderClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object Panel1: TPanel
+      Left = 412
+      Height = 52
+      Top = 6
+      Width = 442
+      Align = alClient
+      BorderSpacing.Around = 6
+      BevelOuter = bvNone
+      ClientHeight = 52
+      ClientWidth = 442
+      ParentBackground = False
+      TabOrder = 0
+      object pbProgress: TProgressBar
+        Left = 5
+        Height = 20
+        Top = 5
+        Width = 432
+        Align = alTop
+        BorderSpacing.Around = 5
+        TabOrder = 0
+      end
+      object lblStatus: TLabel
+        Left = 5
+        Height = 15
+        Top = 30
+        Width = 432
+        Align = alTop
+        BorderSpacing.Around = 5
+        Caption = 'Status: Ready for quantization'
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object pnlConsole: TPanel
+    Left = 0
+    Height = 186
+    Top = 312
+    Width = 860
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 186
+    ClientWidth = 860
+    TabOrder = 2
+    object pnlConsoleToolbar: TPanel
+      Left = 0
+      Height = 32
+      Top = 0
+      Width = 860
+      Align = alTop
+      BevelOuter = bvNone
+      ClientHeight = 32
+      ClientWidth = 860
+      TabOrder = 0
+      object lblConsoleTitle: TLabel
+        Left = 12
+        Height = 15
+        Top = 8
+        Width = 148
+        Caption = 'llama-quantize CLI Output:'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object chkAutoScroll: TCheckBox
+        Left = 176
+        Height = 19
+        Top = 6
+        Width = 77
+        Caption = 'Auto-scroll'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+      end
+      object btnClearConsole: TButton
+        Left = 774
+        Height = 24
+        Top = 4
+        Width = 76
+        Anchors = [akTop, akRight]
+        Caption = 'Clear Log'
+        TabOrder = 1
+        OnClick = btnClearConsoleClick
+      end
+    end
+    object mmoConsole: TMemo
+      Left = 8
+      Height = 146
+      Top = 32
+      Width = 844
+      Align = alClient
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 8
+      Color = 1973790
+      Font.Color = 14474460
+      Font.Height = -12
+      Font.Name = 'Consolas'
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 1
+      WordWrap = False
+    end
+  end
+  object dlgOpenSource: TOpenDialog
+    Title = 'Select Source GGUF Model'
+    Filter = 'GGUF Models (*.gguf)|*.gguf|All Files (*.*)|*.*'
+    Left = 608
+    Top = 24
+  end
+  object dlgSaveTarget: TSaveDialog
+    Title = 'Select Destination GGUF File'
+    DefaultExt = '.gguf'
+    Filter = 'GGUF Models (*.gguf)|*.gguf|All Files (*.*)|*.*'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 680
+    Top = 24
+  end
+  object dlgOpenIMatrix: TOpenDialog
+    Title = 'Select Importance Matrix Data File'
+    Filter = 'Data / Matrix Files (*.dat;*.imatrix;*.bin)|*.dat;*.imatrix;*.bin|All Files (*.*)|*.*'
+    Left = 752
+    Top = 24
+  end
+end

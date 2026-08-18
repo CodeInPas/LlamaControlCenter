@@ -1,0 +1,547 @@
+object frmBenchmark: TfrmBenchmark
+  Left = 340
+  Height = 575
+  Top = 150
+  Width = 960
+  Caption = 'Performance & Inference Benchmark (llama-bench)'
+  ClientHeight = 575
+  ClientWidth = 960
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pnlTop: TPanel
+    Left = 0
+    Height = 280
+    Top = 0
+    Width = 960
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 280
+    ClientWidth = 960
+    TabOrder = 0
+    object gbModelSelection: TGroupBox
+      Left = 6
+      Height = 90
+      Top = 6
+      Width = 948
+      Align = alTop
+      BorderSpacing.Around = 6
+      Caption = ' Target Model File (GGUF) '
+      ClientHeight = 70
+      ClientWidth = 944
+      TabOrder = 0
+      object lblModelPath: TLabel
+        Left = 12
+        Height = 15
+        Top = 6
+        Width = 81
+        Caption = 'GGUF File Path:'
+        ParentColor = False
+      end
+      object edtModelPath: TEdit
+        Left = 12
+        Height = 23
+        Top = 24
+        Width = 828
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+        OnChange = edtModelPathChange
+      end
+      object btnBrowseModel: TButton
+        Left = 848
+        Height = 25
+        Top = 23
+        Width = 84
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 1
+        OnClick = btnBrowseModelClick
+      end
+      object lblModelInfo: TLabel
+        Left = 12
+        Height = 15
+        Top = 48
+        Width = 260
+        Caption = 'Model: Select a model file to evaluate benchmark'
+        Font.Color = clNavy
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object gbBenchParams: TGroupBox
+      Left = 6
+      Height = 172
+      Top = 102
+      Width = 948
+      Align = alClient
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      BorderSpacing.Bottom = 6
+      Caption = ' Benchmark Matrix & Test Ranges '
+      ClientHeight = 152
+      ClientWidth = 944
+      TabOrder = 1
+      object lblPromptTokens: TLabel
+        Left = 12
+        Height = 15
+        Top = 6
+        Width = 124
+        Caption = 'Prompt Tokens (-p list):'
+        ParentColor = False
+      end
+      object edtPromptTokens: TEdit
+        Left = 12
+        Height = 23
+        Top = 24
+        Width = 160
+        TabOrder = 0
+        Text = '512, 1024, 2048'
+      end
+      object lblGenTokens: TLabel
+        Left = 184
+        Height = 15
+        Top = 6
+        Width = 142
+        Caption = 'Generation Tokens (-n list):'
+        ParentColor = False
+      end
+      object edtGenTokens: TEdit
+        Left = 184
+        Height = 23
+        Top = 24
+        Width = 160
+        TabOrder = 1
+        Text = '128, 256'
+      end
+      object lblGpuLayers: TLabel
+        Left = 356
+        Height = 15
+        Top = 6
+        Width = 138
+        Caption = 'GPU Offload Layers (-ngl):'
+        ParentColor = False
+      end
+      object edtGpuLayers: TEdit
+        Left = 356
+        Height = 23
+        Top = 24
+        Width = 160
+        TabOrder = 2
+        Text = '0, 16, 33, 99'
+      end
+      object lblThreads: TLabel
+        Left = 528
+        Height = 15
+        Top = 6
+        Width = 101
+        Caption = 'Thread Counts (-t):'
+        ParentColor = False
+      end
+      object edtThreads: TEdit
+        Left = 528
+        Height = 23
+        Top = 24
+        Width = 140
+        TabOrder = 3
+        Text = '4, 8'
+      end
+      object lblReps: TLabel
+        Left = 680
+        Height = 15
+        Top = 6
+        Width = 82
+        Caption = 'Repetitions (-r):'
+        ParentColor = False
+      end
+      object seReps: TSpinEdit
+        Left = 680
+        Height = 23
+        Top = 24
+        Width = 80
+        MaxValue = 50
+        MinValue = 1
+        TabOrder = 4
+        Value = 3
+      end
+      object lblBatchSizes: TLabel
+        Left = 12
+        Height = 15
+        Top = 56
+        Width = 84
+        Caption = 'Batch Sizes (-b):'
+        ParentColor = False
+      end
+      object edtBatchSizes: TEdit
+        Left = 12
+        Height = 23
+        Top = 74
+        Width = 160
+        TabOrder = 5
+        Text = '512, 1024'
+      end
+      object lblUBatchSizes: TLabel
+        Left = 184
+        Height = 15
+        Top = 56
+        Width = 104
+        Caption = 'U-Batch Sizes (-ub):'
+        ParentColor = False
+      end
+      object edtUBatchSizes: TEdit
+        Left = 184
+        Height = 23
+        Top = 74
+        Width = 160
+        TabOrder = 6
+        Text = '512'
+      end
+      object chkFlashAttn: TCheckBox
+        Left = 356
+        Height = 19
+        Top = 76
+        Width = 124
+        Caption = 'Flash Attention (-fa)'
+        Checked = True
+        State = cbChecked
+        TabOrder = 7
+      end
+      object chkNoMMap: TCheckBox
+        Left = 528
+        Height = 19
+        Top = 76
+        Width = 171
+        Caption = 'Disable MMAP (--no-mmap)'
+        TabOrder = 8
+      end
+      object lblExtraArgs: TLabel
+        Left = 12
+        Height = 15
+        Top = 106
+        Width = 90
+        Caption = 'Extra Parameters:'
+        ParentColor = False
+      end
+      object edtExtraArgs: TEdit
+        Left = 112
+        Height = 23
+        Top = 102
+        Width = 820
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 9
+      end
+    end
+  end
+  object pnlActions: TPanel
+    Left = 0
+    Height = 56
+    Top = 519
+    Width = 960
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 56
+    ClientWidth = 960
+    Color = 2105376
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object btnRunBench: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 10
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Run Benchmark'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnRunBenchClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnCancelBench: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 145
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Cancel / Stop'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnCancelBenchClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnExportCSV1: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 280
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Eksport CSV'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnExportCSVClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object Panel1: TPanel
+      Left = 416
+      Height = 56
+      Top = 0
+      Width = 544
+      Align = alRight
+      BevelOuter = bvNone
+      Caption = 'Panel1'
+      ClientHeight = 56
+      ClientWidth = 544
+      ParentBackground = False
+      TabOrder = 0
+      object pbBench: TProgressBar
+        Left = 6
+        Height = 18
+        Top = 6
+        Width = 532
+        Align = alTop
+        BorderSpacing.Around = 6
+        TabOrder = 0
+      end
+      object lblStatus: TLabel
+        Left = 6
+        Height = 20
+        Top = 30
+        Width = 532
+        Align = alClient
+        BorderSpacing.Around = 6
+        Caption = 'Status: Ready for benchmarking'
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object pnlMainView: TPanel
+    Left = 0
+    Height = 239
+    Top = 280
+    Width = 960
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 239
+    ClientWidth = 960
+    TabOrder = 2
+    object pgcResults: TPageControl
+      Left = 8
+      Height = 223
+      Top = 8
+      Width = 944
+      ActivePage = tsTable
+      Align = alClient
+      BorderSpacing.Around = 8
+      TabIndex = 0
+      TabOrder = 0
+      object tsTable: TTabSheet
+        Caption = 'Benchmark Results Table'
+        ClientHeight = 195
+        ClientWidth = 936
+        object lvResults: TListView
+          Left = 0
+          Height = 195
+          Top = 0
+          Width = 936
+          Align = alClient
+          Columns = <          
+            item
+              Caption = 'Model / Arch'
+              Width = 150
+            end          
+            item
+              Caption = 'Params'
+              Width = 70
+            end          
+            item
+              Caption = 'Backend'
+              Width = 80
+            end          
+            item
+              Caption = 'Threads'
+              Width = 65
+            end          
+            item
+              Caption = 'NGL'
+              Width = 55
+            end          
+            item
+              Caption = 'Prompt (PP)'
+              Width = 90
+            end          
+            item
+              Caption = 'PP Speed (t/s)'
+              Width = 110
+            end          
+            item
+              Caption = 'Gen (TG)'
+              Width = 80
+            end          
+            item
+              Caption = 'TG Speed (t/s)'
+              Width = 110
+            end          
+            item
+              Caption = 'Details'
+              Width = 100
+            end>
+          GridLines = True
+          ReadOnly = True
+          RowSelect = True
+          TabOrder = 0
+          ViewStyle = vsReport
+        end
+      end
+      object tsConsole: TTabSheet
+        Caption = 'Live Benchmark CLI Log'
+        ClientHeight = 195
+        ClientWidth = 936
+        object pnlConsoleToolbar: TPanel
+          Left = 0
+          Height = 30
+          Top = 0
+          Width = 936
+          Align = alTop
+          BevelOuter = bvNone
+          ClientHeight = 30
+          ClientWidth = 936
+          TabOrder = 0
+          object chkAutoScroll: TCheckBox
+            Left = 8
+            Height = 19
+            Top = 6
+            Width = 77
+            Caption = 'Auto-scroll'
+            Checked = True
+            State = cbChecked
+            TabOrder = 0
+          end
+          object btnClearLog: TButton
+            Left = 852
+            Height = 24
+            Top = 3
+            Width = 76
+            Anchors = [akTop, akRight]
+            Caption = 'Clear Log'
+            TabOrder = 1
+            OnClick = btnClearLogClick
+          end
+        end
+        object mmoConsole: TMemo
+          Left = 0
+          Height = 165
+          Top = 30
+          Width = 936
+          Align = alClient
+          Color = 1973790
+          Font.Color = 14474460
+          Font.Height = -12
+          Font.Name = 'Consolas'
+          ParentFont = False
+          ReadOnly = True
+          ScrollBars = ssAutoBoth
+          TabOrder = 1
+          WordWrap = False
+        end
+      end
+      object tsSummary: TTabSheet
+        Caption = 'Performance Summary'
+        ClientHeight = 195
+        ClientWidth = 936
+        object mmoSummary: TMemo
+          Left = 8
+          Height = 179
+          Top = 8
+          Width = 920
+          Align = alClient
+          BorderSpacing.Around = 8
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Consolas'
+          ParentFont = False
+          ReadOnly = True
+          ScrollBars = ssAutoBoth
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object dlgOpenModel: TOpenDialog
+    Title = 'Select Target GGUF Model File'
+    Filter = 'GGUF Models (*.gguf)|*.gguf|All Files (*.*)|*.*'
+    Left = 704
+    Top = 24
+  end
+  object dlgSaveCSV: TSaveDialog
+    Title = 'Export Benchmark Results to CSV'
+    DefaultExt = '.csv'
+    Filter = 'CSV Spreadsheet (*.csv)|*.csv|Text Files (*.txt)|*.txt|All Files (*.*)|*.*'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 776
+    Top = 24
+  end
+end

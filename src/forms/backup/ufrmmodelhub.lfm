@@ -1,0 +1,534 @@
+object frmModelHub: TfrmModelHub
+  Left = 320
+  Height = 500
+  Top = 150
+  Width = 1020
+  BorderStyle = bsSingle
+  Caption = 'Model Hub & Hugging Face Manager'
+  ClientHeight = 500
+  ClientWidth = 1020
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pgcHub: TPageControl
+    Left = 0
+    Height = 500
+    Top = 0
+    Width = 1020
+    ActivePage = tsLocalModels
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tsLocalModels: TTabSheet
+      Caption = 'Local GGUF Models'
+      ClientHeight = 472
+      ClientWidth = 1012
+      object pnlLocalTop: TPanel
+        Left = 0
+        Height = 46
+        Top = 0
+        Width = 1012
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 46
+        ClientWidth = 1012
+        TabOrder = 0
+        object lblLocalFilter: TLabel
+          Left = 12
+          Height = 15
+          Top = 16
+          Width = 67
+          Caption = 'Search Filter:'
+          ParentColor = False
+        end
+        object txtFilterLocal: TEdit
+          Left = 84
+          Height = 23
+          Top = 12
+          Width = 320
+          TabOrder = 0
+          OnChange = txtFilterLocalChange
+        end
+        object btnRefreshLocal: TButton
+          Left = 412
+          Height = 26
+          Top = 10
+          Width = 100
+          Caption = 'Refresh List'
+          TabOrder = 1
+          OnClick = btnRefreshLocalClick
+        end
+        object btnOpenFolder: TButton
+          Left = 518
+          Height = 26
+          Top = 10
+          Width = 120
+          Caption = 'Open Folder'
+          TabOrder = 2
+          OnClick = btnOpenFolderClick
+        end
+      end
+      object pnlBottomActions: TPanel
+        Left = 0
+        Height = 47
+        Top = 425
+        Width = 1012
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 47
+        ClientWidth = 1012
+        Color = 4798252
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 1
+        object btnSendToServer: TColorSpeedButton
+          Cursor = crHandPoint
+          Left = 5
+          Height = 37
+          Top = 5
+          Width = 171
+          Align = alLeft
+          BorderSpacing.Around = 5
+          Caption = 'Load in Server Control'
+          Flat = True
+          Font.Color = 15989988
+          Font.Style = [fsBold]
+          ParentFont = False
+          OnClick = btnSendToServerClick
+          TextAutoSize = True
+          Toggle = False
+          Pressed = False
+          PopupMode = False
+          StateNormal.Color = 10242074
+          StateNormal.BorderColor = 10524182
+          StateNormal.BorderWidth = 1
+          StateHover.Color = 2345688
+          StateHover.BorderColor = 7462888
+          StateHover.BorderWidth = 1
+          StateActive.Color = 10120989
+          StateActive.BorderColor = 10048512
+          StateActive.BorderWidth = 1
+          StateDisabled.Color = 13421772
+          StateDisabled.BorderColor = 12566463
+          StateDisabled.BorderWidth = 1
+        end
+        object btnInspectModel: TColorSpeedButton
+          Cursor = crHandPoint
+          Left = 181
+          Height = 37
+          Top = 5
+          Width = 171
+          Align = alLeft
+          BorderSpacing.Around = 5
+          Caption = 'Re-Inspect'
+          Flat = True
+          Font.Color = 15989988
+          Font.Style = [fsBold]
+          ParentFont = False
+          OnClick = btnInspectModelClick
+          TextAutoSize = True
+          Toggle = False
+          Pressed = False
+          PopupMode = False
+          StateNormal.Color = 10242074
+          StateNormal.BorderColor = 10524182
+          StateNormal.BorderWidth = 1
+          StateHover.Color = 2345688
+          StateHover.BorderColor = 7462888
+          StateHover.BorderWidth = 1
+          StateActive.Color = 10120989
+          StateActive.BorderColor = 10048512
+          StateActive.BorderWidth = 1
+          StateDisabled.Color = 13421772
+          StateDisabled.BorderColor = 12566463
+          StateDisabled.BorderWidth = 1
+        end
+        object btnDeleteModel: TColorSpeedButton
+          Cursor = crHandPoint
+          Left = 836
+          Height = 37
+          Top = 5
+          Width = 171
+          Align = alRight
+          BorderSpacing.Around = 5
+          Caption = 'Delete File'
+          Flat = True
+          Font.Color = 15989988
+          Font.Style = [fsBold]
+          ParentFont = False
+          OnClick = btnDeleteModelClick
+          TextAutoSize = True
+          Toggle = False
+          Pressed = False
+          PopupMode = False
+          StateNormal.Color = 10242074
+          StateNormal.BorderColor = 10524182
+          StateNormal.BorderWidth = 1
+          StateHover.Color = 2345688
+          StateHover.BorderColor = 7462888
+          StateHover.BorderWidth = 1
+          StateActive.Color = 10120989
+          StateActive.BorderColor = 10048512
+          StateActive.BorderWidth = 1
+          StateDisabled.Color = 13421772
+          StateDisabled.BorderColor = 12566463
+          StateDisabled.BorderWidth = 1
+        end
+      end
+      object pnlLocalMain: TPanel
+        Left = 0
+        Height = 379
+        Top = 46
+        Width = 1012
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 379
+        ClientWidth = 1012
+        TabOrder = 2
+        object pnlLocalLeft: TPanel
+          Left = 0
+          Height = 379
+          Top = 0
+          Width = 620
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 379
+          ClientWidth = 620
+          TabOrder = 0
+          object lvLocalModels: TListView
+            Left = 8
+            Height = 363
+            Top = 8
+            Width = 604
+            Align = alClient
+            BorderSpacing.Around = 8
+            Columns = <            
+              item
+                Caption = 'Model File Name'
+                Width = 220
+              end            
+              item
+                Caption = 'Size'
+                Width = 85
+              end            
+              item
+                Caption = 'Architecture'
+                Width = 100
+              end            
+              item
+                Caption = 'Quant'
+                Width = 90
+              end            
+              item
+                Caption = 'Parameters'
+                Width = 90
+              end>
+            GridLines = True
+            ReadOnly = True
+            RowSelect = True
+            TabOrder = 0
+            ViewStyle = vsReport
+            OnSelectItem = lvLocalModelsSelectItem
+          end
+        end
+        object splLocal: TSplitter
+          Left = 620
+          Height = 379
+          Top = 0
+          Width = 6
+        end
+        object pnlLocalRight: TPanel
+          Left = 626
+          Height = 379
+          Top = 0
+          Width = 386
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 379
+          ClientWidth = 386
+          TabOrder = 2
+          object gbLocalDetails: TGroupBox
+            Left = 8
+            Height = 363
+            Top = 8
+            Width = 370
+            Align = alClient
+            BorderSpacing.Around = 8
+            Caption = ' Model Architecture & Memory Fit '
+            ClientHeight = 343
+            ClientWidth = 366
+            TabOrder = 0
+            object mmoModelDetails: TMemo
+              Left = 0
+              Height = 343
+              Top = 0
+              Width = 366
+              Align = alClient
+              Color = 1973790
+              Font.Color = 14474460
+              Font.Height = -12
+              Font.Name = 'Consolas'
+              ParentFont = False
+              ReadOnly = True
+              ScrollBars = ssAutoBoth
+              TabOrder = 0
+              WordWrap = False
+            end
+          end
+        end
+      end
+    end
+    object tsHFHub: TTabSheet
+      Caption = 'Hugging Face Explorer'
+      ClientHeight = 472
+      ClientWidth = 1012
+      object pnlHFTop: TPanel
+        Left = 0
+        Height = 48
+        Top = 0
+        Width = 1012
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 48
+        ClientWidth = 1012
+        TabOrder = 0
+        object lblHFSearch: TLabel
+          Left = 12
+          Height = 15
+          Top = 16
+          Width = 115
+          Caption = 'Search Hugging Face:'
+          ParentColor = False
+        end
+        object edtHFSearch: TEdit
+          Left = 132
+          Height = 23
+          Top = 12
+          Width = 420
+          TabOrder = 0
+          Text = 'llama-3 Q4_K_M'
+          OnKeyPress = edtHFSearchKeyPress
+        end
+        object btnSearchHF: TButton
+          Left = 560
+          Height = 26
+          Top = 10
+          Width = 90
+          Caption = 'Search Hub'
+          TabOrder = 1
+          OnClick = btnSearchHFClick
+        end
+      end
+      object pnlHFMain: TPanel
+        Left = 0
+        Height = 424
+        Top = 48
+        Width = 1012
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 424
+        ClientWidth = 1012
+        TabOrder = 1
+        object pnlHFLeft: TPanel
+          Left = 0
+          Height = 424
+          Top = 0
+          Width = 480
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 424
+          ClientWidth = 480
+          TabOrder = 0
+          object lvHFModels: TListView
+            Left = 8
+            Height = 408
+            Top = 8
+            Width = 464
+            Align = alClient
+            BorderSpacing.Around = 8
+            Columns = <            
+              item
+                Caption = 'Repository / Model ID'
+                Width = 240
+              end            
+              item
+                Caption = 'Downloads'
+                Width = 80
+              end            
+              item
+                Caption = 'Likes'
+                Width = 60
+              end            
+              item
+                Caption = 'Tag'
+                Width = 80
+              end>
+            GridLines = True
+            ReadOnly = True
+            RowSelect = True
+            TabOrder = 0
+            ViewStyle = vsReport
+            OnSelectItem = lvHFModelsSelectItem
+          end
+        end
+        object splHF: TSplitter
+          Left = 480
+          Height = 424
+          Top = 0
+          Width = 6
+        end
+        object pnlHFRight: TPanel
+          Left = 486
+          Height = 424
+          Top = 0
+          Width = 526
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 424
+          ClientWidth = 526
+          TabOrder = 2
+          object lblRepoFiles: TLabel
+            Left = 8
+            Height = 15
+            Top = 8
+            Width = 192
+            Caption = 'Available GGUF Files in Repository:'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lvHFFiles: TListView
+            Left = 8
+            Height = 356
+            Top = 28
+            Width = 510
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            Columns = <            
+              item
+                Caption = 'File Name'
+                Width = 200
+              end            
+              item
+                Caption = 'Extension'
+                Width = 70
+              end            
+              item
+                Caption = 'Download Endpoint URL'
+                Width = 230
+              end>
+            GridLines = True
+            ReadOnly = True
+            RowSelect = True
+            TabOrder = 0
+            ViewStyle = vsReport
+          end
+          object btnDownloadSelected: TButton
+            Left = 8
+            Height = 32
+            Top = 386
+            Width = 510
+            Anchors = [akLeft, akRight, akBottom]
+            Caption = 'Download Selected GGUF Quant'
+            Font.Height = -12
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            OnClick = btnDownloadSelectedClick
+          end
+        end
+      end
+    end
+    object tsDownloads: TTabSheet
+      Caption = 'Active Download'
+      ClientHeight = 472
+      ClientWidth = 1012
+      object pnlDownloadsTab: TPanel
+        Left = 0
+        Height = 472
+        Top = 0
+        Width = 1012
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 472
+        ClientWidth = 1012
+        TabOrder = 0
+        object gbDownloadProgress: TGroupBox
+          Left = 16
+          Height = 220
+          Top = 16
+          Width = 980
+          Anchors = [akTop, akLeft, akRight]
+          Caption = ' Live Model Transfer Telemetry '
+          ClientHeight = 200
+          ClientWidth = 976
+          TabOrder = 0
+          object lblDownloadStatus: TLabel
+            Left = 16
+            Height = 15
+            Top = 16
+            Width = 151
+            Caption = 'Status: Idle / No downloads'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object pbDownload: TProgressBar
+            Left = 16
+            Height = 24
+            Top = 44
+            Width = 944
+            Anchors = [akTop, akLeft, akRight]
+            TabOrder = 0
+          end
+          object lblDownloadSpeed: TLabel
+            Left = 16
+            Height = 15
+            Top = 80
+            Width = 90
+            Caption = 'Speed: 0.00 MB/s'
+            ParentColor = False
+          end
+          object lblDownloadETA: TLabel
+            Left = 240
+            Height = 15
+            Top = 80
+            Width = 68
+            Caption = 'ETA: 00:00:00'
+            ParentColor = False
+          end
+          object btnPauseDownload: TButton
+            Left = 16
+            Height = 32
+            Top = 120
+            Width = 110
+            Caption = 'Pause'
+            Enabled = False
+            TabOrder = 1
+            OnClick = btnPauseDownloadClick
+          end
+          object btnCancelDownload: TButton
+            Left = 136
+            Height = 32
+            Top = 120
+            Width = 110
+            Caption = 'Cancel'
+            Enabled = False
+            TabOrder = 2
+            OnClick = btnCancelDownloadClick
+          end
+        end
+      end
+    end
+  end
+  object tmrSearchDebounce: TTimer
+    Enabled = False
+    Interval = 400
+    Left = 896
+    Top = 16
+  end
+end

@@ -1,0 +1,302 @@
+object frmDownloader: TfrmDownloader
+  Left = 360
+  Height = 486
+  Top = 200
+  Width = 900
+  BorderStyle = bsSingle
+  Caption = 'Model Download Manager'
+  ClientHeight = 486
+  ClientWidth = 900
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pnlTopAdd: TPanel
+    Left = 0
+    Height = 148
+    Top = 0
+    Width = 900
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 148
+    ClientWidth = 900
+    TabOrder = 0
+    object gbNewDownload: TGroupBox
+      Left = 6
+      Height = 136
+      Top = 6
+      Width = 888
+      Align = alClient
+      BorderSpacing.Around = 6
+      Caption = ' Add New Download Task '
+      ClientHeight = 116
+      ClientWidth = 884
+      TabOrder = 0
+      object lblUrl: TLabel
+        Left = 12
+        Height = 15
+        Top = 8
+        Width = 130
+        Caption = 'Source URL / Direct Link:'
+        ParentColor = False
+      end
+      object edtUrl: TEdit
+        Left = 12
+        Height = 23
+        Top = 26
+        Width = 676
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+      end
+      object btnPasteUrl: TButton
+        Left = 694
+        Height = 25
+        Top = 25
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Paste'
+        TabOrder = 1
+        OnClick = btnPasteUrlClick
+      end
+      object lblDestination: TLabel
+        Left = 12
+        Height = 15
+        Top = 58
+        Width = 114
+        Caption = 'Destination Directory:'
+        ParentColor = False
+      end
+      object edtDestination: TEdit
+        Left = 12
+        Height = 23
+        Top = 76
+        Width = 476
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 2
+      end
+      object btnBrowseDest: TButton
+        Left = 494
+        Height = 25
+        Top = 75
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 3
+        OnClick = btnBrowseDestClick
+      end
+      object lblToken: TLabel
+        Left = 582
+        Height = 15
+        Top = 58
+        Width = 147
+        Anchors = [akTop, akRight]
+        Caption = 'Auth / HF Token (Optional):'
+        ParentColor = False
+      end
+      object edtToken: TEdit
+        Left = 584
+        Height = 23
+        Top = 76
+        Width = 190
+        Anchors = [akTop, akRight]
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 4
+      end
+      object btnAddDownload: TButton
+        Left = 780
+        Height = 75
+        Top = 25
+        Width = 92
+        Anchors = [akTop, akRight]
+        Caption = 'Add & Start'
+        Font.Height = -12
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 5
+        OnClick = btnAddDownloadClick
+      end
+    end
+  end
+  object pnlCenter: TPanel
+    Left = 0
+    Height = 302
+    Top = 148
+    Width = 900
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 302
+    ClientWidth = 900
+    TabOrder = 1
+    object lvDownloads: TListView
+      Left = 8
+      Height = 286
+      Top = 8
+      Width = 750
+      Align = alClient
+      BorderSpacing.Around = 8
+      Columns = <      
+        item
+          Caption = 'File Name'
+          Width = 180
+        end      
+        item
+          Caption = 'Total Size'
+          Width = 85
+        end      
+        item
+          Caption = 'Downloaded'
+          Width = 90
+        end      
+        item
+          Caption = 'Progress'
+          Width = 80
+        end      
+        item
+          Caption = 'Speed'
+          Width = 85
+        end      
+        item
+          Caption = 'ETA'
+          Width = 75
+        end      
+        item
+          Caption = 'Status'
+          Width = 95
+        end      
+        item
+          Caption = 'Download URL'
+          Width = 260
+        end>
+      GridLines = True
+      ReadOnly = True
+      RowSelect = True
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnSelectItem = lvDownloadsSelectItem
+    end
+    object pnlRightControls: TPanel
+      Left = 766
+      Height = 302
+      Top = 0
+      Width = 134
+      Align = alRight
+      BevelOuter = bvNone
+      ClientHeight = 302
+      ClientWidth = 134
+      TabOrder = 1
+      object btnPause: TButton
+        Left = 8
+        Height = 32
+        Top = 8
+        Width = 118
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Pause'
+        Enabled = False
+        TabOrder = 0
+        OnClick = btnPauseClick
+      end
+      object btnResume: TButton
+        Left = 8
+        Height = 32
+        Top = 48
+        Width = 118
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Resume'
+        Enabled = False
+        TabOrder = 1
+        OnClick = btnResumeClick
+      end
+      object btnCancel: TButton
+        Left = 8
+        Height = 32
+        Top = 88
+        Width = 118
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Cancel / Remove'
+        Enabled = False
+        TabOrder = 2
+        OnClick = btnCancelClick
+      end
+      object btnOpenFolder: TButton
+        Left = 8
+        Height = 32
+        Top = 136
+        Width = 118
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Open Folder'
+        TabOrder = 3
+        OnClick = btnOpenFolderClick
+      end
+      object btnClearCompleted: TButton
+        Left = 8
+        Height = 32
+        Top = 176
+        Width = 118
+        Anchors = [akTop, akLeft, akRight]
+        Caption = 'Clear Completed'
+        TabOrder = 4
+        OnClick = btnClearCompletedClick
+      end
+    end
+  end
+  object pnlBottomStatus: TPanel
+    Left = 0
+    Height = 36
+    Top = 450
+    Width = 900
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 36
+    ClientWidth = 900
+    Color = 8741966
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 2
+    object lblQueueSummary: TLabel
+      Left = 12
+      Height = 15
+      Top = 10
+      Width = 178
+      Caption = 'Tasks: 0 Active | 0 Paused | 0 Done'
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblTotalSpeed: TLabel
+      Left = 489
+      Height = 15
+      Top = 10
+      Width = 93
+      Anchors = [akTop, akRight]
+      Caption = 'Total Speed: 0 B/s'
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object pbTotalProgress: TProgressBar
+      Left = 650
+      Height = 18
+      Top = 9
+      Width = 238
+      Anchors = [akTop, akRight]
+      TabOrder = 0
+    end
+  end
+  object tmrUpdate: TTimer
+    Interval = 500
+    OnTimer = tmrUpdateTimer
+    Left = 816
+    Top = 320
+  end
+  object dlgSelectFolder: TSelectDirectoryDialog
+    Title = 'Select Download Destination Directory'
+    Left = 816
+    Top = 376
+  end
+end

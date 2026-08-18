@@ -1,0 +1,668 @@
+object frmSettings: TfrmSettings
+  Left = 450
+  Height = 560
+  Top = 220
+  Width = 680
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Application & Engine Settings'
+  ClientHeight = 560
+  ClientWidth = 680
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
+  OnShow = FormShow
+  object pnlBottom: TPanel
+    Left = 0
+    Height = 50
+    Top = 510
+    Width = 680
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 680
+    TabOrder = 1
+    object btnSave: TButton
+      Left = 574
+      Height = 32
+      Top = 9
+      Width = 96
+      Anchors = [akTop, akRight]
+      Caption = 'Save'
+      TabOrder = 0
+      OnClick = btnSaveClick
+    end
+    object btnCancel: TButton
+      Left = 470
+      Height = 32
+      Top = 9
+      Width = 96
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+      OnClick = btnCancelClick
+    end
+    object btnReset: TButton
+      Left = 16
+      Height = 32
+      Top = 9
+      Width = 128
+      Caption = 'Restore Defaults'
+      TabOrder = 2
+      OnClick = btnResetClick
+    end
+  end
+  object pgcSettings: TPageControl
+    Left = 8
+    Height = 494
+    Top = 8
+    Width = 664
+    ActivePage = tsPaths
+    Align = alClient
+    BorderSpacing.Around = 8
+    TabIndex = 1
+    TabOrder = 0
+    object tsGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 466
+      ClientWidth = 656
+      object gbInterface: TGroupBox
+        Left = 16
+        Height = 136
+        Top = 16
+        Width = 624
+        Anchors = [akTop, akLeft, akRight]
+        Caption = ' Interface & Theme '
+        ClientHeight = 116
+        ClientWidth = 620
+        TabOrder = 0
+        object lblTheme: TLabel
+          Left = 16
+          Height = 15
+          Top = 16
+          Width = 74
+          Caption = 'Visual Theme:'
+          ParentColor = False
+        end
+        object cmbTheme: TComboBox
+          Left = 16
+          Height = 23
+          Top = 36
+          Width = 240
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'System'
+            'Dark'
+            'Light'
+          )
+          Style = csDropDownList
+          TabOrder = 0
+          Text = 'System'
+        end
+        object chkCheckUpdates: TCheckBox
+          Left = 16
+          Height = 19
+          Top = 76
+          Width = 189
+          Caption = 'Check for updates automatically'
+          TabOrder = 1
+        end
+      end
+      object gbWindowBehavior: TGroupBox
+        Left = 16
+        Height = 120
+        Top = 168
+        Width = 624
+        Anchors = [akTop, akLeft, akRight]
+        Caption = ' System Tray & Window Behavior '
+        ClientHeight = 100
+        ClientWidth = 620
+        TabOrder = 1
+        object chkStartMinimized: TCheckBox
+          Left = 16
+          Height = 19
+          Top = 16
+          Width = 178
+          Caption = 'Start minimized to system tray'
+          TabOrder = 0
+        end
+        object chkMinimizeToTray: TCheckBox
+          Left = 16
+          Height = 19
+          Top = 50
+          Width = 191
+          Caption = 'Minimize to system tray on close'
+          Checked = True
+          State = cbChecked
+          TabOrder = 1
+        end
+      end
+    end
+    object tsPaths: TTabSheet
+      Caption = 'Paths & Binaries'
+      ClientHeight = 466
+      ClientWidth = 656
+      object lblServerBinary: TLabel
+        Left = 16
+        Height = 15
+        Top = 10
+        Width = 147
+        Caption = 'llama-server.exe Executable:'
+        ParentColor = False
+      end
+      object edtServerBinary: TEdit
+        Left = 16
+        Height = 23
+        Top = 28
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+      end
+      object btnBrowseServer: TButton
+        Left = 560
+        Height = 25
+        Top = 27
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 1
+        OnClick = btnBrowseServerClick
+      end
+      object lblCliBinary: TLabel
+        Left = 16
+        Height = 15
+        Top = 58
+        Width = 128
+        Caption = 'llama-cli.exe Executable:'
+        ParentColor = False
+      end
+      object edtCliBinary: TEdit
+        Left = 16
+        Height = 23
+        Top = 76
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 2
+      end
+      object btnBrowseCli: TButton
+        Left = 560
+        Height = 25
+        Top = 75
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 3
+        OnClick = btnBrowseCliClick
+      end
+      object lblQuantizeBinary: TLabel
+        Left = 16
+        Height = 15
+        Top = 106
+        Width = 161
+        Caption = 'llama-quantize.exe Executable:'
+        ParentColor = False
+      end
+      object edtQuantizeBinary: TEdit
+        Left = 16
+        Height = 23
+        Top = 124
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 4
+      end
+      object btnBrowseQuantize: TButton
+        Left = 560
+        Height = 25
+        Top = 123
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 5
+        OnClick = btnBrowseQuantizeClick
+      end
+      object lblBenchBinary: TLabel
+        Left = 16
+        Height = 15
+        Top = 154
+        Width = 145
+        Caption = 'llama-bench.exe Executable:'
+        ParentColor = False
+      end
+      object edtBenchBinary: TEdit
+        Left = 16
+        Height = 23
+        Top = 172
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 6
+      end
+      object btnBrowseBench: TButton
+        Left = 560
+        Height = 25
+        Top = 171
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 7
+        OnClick = btnBrowseBenchClick
+      end
+      object lblSplitBinary: TLabel
+        Left = 16
+        Height = 15
+        Top = 202
+        Width = 165
+        Caption = 'llama-gguf-split.exe Executable:'
+        ParentColor = False
+      end
+      object edtSplitBinary: TEdit
+        Left = 16
+        Height = 23
+        Top = 220
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 8
+      end
+      object btnBrowseSplit: TButton
+        Left = 560
+        Height = 25
+        Top = 219
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 9
+        OnClick = btnBrowseSplitClick
+      end
+      object lblModelsDir: TLabel
+        Left = 16
+        Height = 15
+        Top = 250
+        Width = 121
+        Caption = 'Models Root Directory:'
+        ParentColor = False
+      end
+      object edtModelsDir: TEdit
+        Left = 16
+        Height = 23
+        Top = 268
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 10
+      end
+      object btnBrowseModels: TButton
+        Left = 560
+        Height = 25
+        Top = 267
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 11
+        OnClick = btnBrowseModelsClick
+      end
+      object lblDownloadsDir: TLabel
+        Left = 16
+        Height = 15
+        Top = 298
+        Width = 149
+        Caption = 'Default Download Directory:'
+        ParentColor = False
+      end
+      object edtDownloadsDir: TEdit
+        Left = 16
+        Height = 23
+        Top = 316
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 12
+      end
+      object btnBrowseDownloads: TButton
+        Left = 560
+        Height = 25
+        Top = 315
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 13
+        OnClick = btnBrowseDownloadsClick
+      end
+      object lblLogsDir: TLabel
+        Left = 16
+        Height = 15
+        Top = 346
+        Width = 106
+        Caption = 'Logs Save Directory:'
+        ParentColor = False
+      end
+      object edtLogsDir: TEdit
+        Left = 16
+        Height = 23
+        Top = 364
+        Width = 536
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 14
+      end
+      object btnBrowseLogs: TButton
+        Left = 560
+        Height = 25
+        Top = 363
+        Width = 80
+        Anchors = [akTop, akRight]
+        Caption = 'Browse...'
+        TabOrder = 15
+        OnClick = btnBrowseLogsClick
+      end
+    end
+    object tsServer: TTabSheet
+      Caption = 'Server Defaults'
+      ClientHeight = 466
+      ClientWidth = 656
+      object lblDefaultHost: TLabel
+        Left = 16
+        Height = 15
+        Top = 16
+        Width = 96
+        Caption = 'Default Bind Host:'
+        ParentColor = False
+      end
+      object edtDefaultHost: TEdit
+        Left = 16
+        Height = 23
+        Top = 36
+        Width = 240
+        TabOrder = 0
+        Text = '127.0.0.1'
+      end
+      object lblDefaultPort: TLabel
+        Left = 280
+        Height = 15
+        Top = 16
+        Width = 66
+        Caption = 'Default Port:'
+        ParentColor = False
+      end
+      object seDefaultPort: TSpinEdit
+        Left = 280
+        Height = 23
+        Top = 36
+        Width = 120
+        MaxValue = 65535
+        MinValue = 1
+        TabOrder = 1
+        Value = 8080
+      end
+      object lblTimeout: TLabel
+        Left = 16
+        Height = 15
+        Top = 80
+        Width = 121
+        Caption = 'Request Timeout (sec):'
+        ParentColor = False
+      end
+      object seTimeout: TSpinEdit
+        Left = 16
+        Height = 23
+        Top = 100
+        Width = 240
+        MaxValue = 3600
+        MinValue = 10
+        TabOrder = 2
+        Value = 120
+      end
+      object lblApiKey: TLabel
+        Left = 16
+        Height = 15
+        Top = 144
+        Width = 127
+        Caption = 'Default API Secret / Key:'
+        ParentColor = False
+      end
+      object edtApiKey: TEdit
+        Left = 16
+        Height = 23
+        Top = 164
+        Width = 624
+        Anchors = [akTop, akLeft, akRight]
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 3
+      end
+      object chkEnableCors: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 208
+        Width = 203
+        Caption = 'Enable CORS (Cross-Origin Access)'
+        Checked = True
+        State = cbChecked
+        TabOrder = 4
+      end
+      object chkAutoStart: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 240
+        Width = 224
+        Caption = 'Auto-start server on application launch'
+        TabOrder = 5
+      end
+    end
+    object tsDownloader: TTabSheet
+      Caption = 'Downloader'
+      ClientHeight = 466
+      ClientWidth = 656
+      object lblHFEndpoint: TLabel
+        Left = 16
+        Height = 15
+        Top = 16
+        Width = 149
+        Caption = 'Hugging Face API Endpoint:'
+        ParentColor = False
+      end
+      object edtHFEndpoint: TEdit
+        Left = 16
+        Height = 23
+        Top = 36
+        Width = 624
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+        Text = 'https://huggingface.co'
+      end
+      object lblHFToken: TLabel
+        Left = 16
+        Height = 15
+        Top = 80
+        Width = 245
+        Caption = 'Hugging Face User Access Token (HF_TOKEN):'
+        ParentColor = False
+      end
+      object edtHFToken: TEdit
+        Left = 16
+        Height = 23
+        Top = 100
+        Width = 624
+        Anchors = [akTop, akLeft, akRight]
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 1
+      end
+      object lblMaxDownloads: TLabel
+        Left = 16
+        Height = 15
+        Top = 144
+        Width = 150
+        Caption = 'Max Concurrent Downloads:'
+        ParentColor = False
+      end
+      object seMaxDownloads: TSpinEdit
+        Left = 16
+        Height = 23
+        Top = 164
+        Width = 160
+        MaxValue = 8
+        MinValue = 1
+        TabOrder = 2
+        Value = 2
+      end
+      object lblBufferSize: TLabel
+        Left = 200
+        Height = 15
+        Top = 144
+        Width = 123
+        Caption = 'Stream Buffer Size (KB):'
+        ParentColor = False
+      end
+      object seBufferSize: TSpinEdit
+        Left = 200
+        Height = 23
+        Top = 164
+        Width = 160
+        MaxValue = 1024
+        MinValue = 16
+        TabOrder = 3
+        Value = 64
+      end
+      object chkAutoVerify: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 216
+        Width = 252
+        Caption = 'Auto-verify SHA256 integrity after download'
+        Checked = True
+        State = cbChecked
+        TabOrder = 4
+      end
+      object chkAutoRegister: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 248
+        Width = 258
+        Caption = 'Automatically register model into Model Hub'
+        Checked = True
+        State = cbChecked
+        TabOrder = 5
+      end
+    end
+    object tsLogging: TTabSheet
+      Caption = 'Logging & Hardware'
+      ClientHeight = 466
+      ClientWidth = 656
+      object lblLogLevel: TLabel
+        Left = 16
+        Height = 15
+        Top = 16
+        Width = 74
+        Caption = 'Log Verbosity:'
+        ParentColor = False
+      end
+      object cmbLogLevel: TComboBox
+        Left = 16
+        Height = 23
+        Top = 36
+        Width = 200
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'DEBUG'
+          'INFO'
+          'WARN'
+          'ERROR'
+        )
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'DEBUG'
+      end
+      object lblMaxLogLines: TLabel
+        Left = 240
+        Height = 15
+        Top = 16
+        Width = 130
+        Caption = 'Max Rolling Buffer Lines:'
+        ParentColor = False
+      end
+      object seMaxLogLines: TSpinEdit
+        Left = 240
+        Height = 23
+        Top = 36
+        Width = 160
+        MaxValue = 50000
+        MinValue = 500
+        TabOrder = 1
+        Value = 5000
+      end
+      object chkLogToFile: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 80
+        Width = 141
+        Caption = 'Write logs to rolling file'
+        Checked = True
+        State = cbChecked
+        TabOrder = 2
+      end
+      object chkParseAnsi: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 112
+        Width = 196
+        Caption = 'Parse ANSI color codes in console'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+      end
+      object gbTelemetry: TGroupBox
+        Left = 16
+        Height = 120
+        Top = 160
+        Width = 624
+        Anchors = [akTop, akLeft, akRight]
+        Caption = ' Telemetry & Hardware Polling '
+        ClientHeight = 100
+        ClientWidth = 620
+        TabOrder = 4
+        object chkAutoDetectGPU: TCheckBox
+          Left = 16
+          Height = 19
+          Top = 16
+          Width = 167
+          Caption = 'Auto-detect GPU and VRAM'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+        end
+        object lblPollingInterval: TLabel
+          Left = 16
+          Height = 15
+          Top = 48
+          Width = 163
+          Caption = 'Hardware Polling Interval (ms):'
+          ParentColor = False
+        end
+        object sePollingInterval: TSpinEdit
+          Left = 16
+          Height = 23
+          Top = 68
+          Width = 160
+          MaxValue = 10000
+          MinValue = 250
+          TabOrder = 1
+          Value = 1000
+        end
+      end
+    end
+  end
+  object dlgOpenBinary: TOpenDialog
+    Title = 'Select llama.cpp Executable Binary'
+    Filter = 'Executables (*.exe;*)|*.exe;*|All Files (*.*)|*.*'
+    Left = 528
+    Top = 424
+  end
+  object dlgSelectFolder: TSelectDirectoryDialog
+    Title = 'Select Target Directory'
+    Left = 608
+    Top = 424
+  end
+end

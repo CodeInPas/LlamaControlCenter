@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="LlamaControlCenter.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="58"/>
+        <CursorPos Y="81"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="679"/>
+        <CursorPos Y="682"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\utils\uansiparser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="392"/>
+        <CursorPos X="5" Y="416"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\utils\uformatting.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="189"/>
+        <CursorPos X="5" Y="214"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\utils\ujsonhelper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="327"/>
+        <CursorPos X="5" Y="352"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\utils\ulogger.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="275"/>
+        <CursorPos X="5" Y="300"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\utils\upromptformatter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="22"/>
+        <TopLine Value="437"/>
+        <CursorPos X="5" Y="462"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\types\uchattypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="281"/>
+        <CursorPos X="5" Y="306"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\types\uconfigtypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="298"/>
+        <CursorPos X="5" Y="322"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\types\ugguftypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="289"/>
+        <CursorPos X="5" Y="314"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\network\uhfclient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="32"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\network\uhttpdownloader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="410"/>
+        <CursorPos X="5" Y="434"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\network\uopenaiserializer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="32"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\network\usseclient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="25"/>
+        <TopLine Value="353"/>
+        <CursorPos X="5" Y="437"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmbenchmark.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBenchmark"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="229"/>
+        <CursorPos X="15" Y="252"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmdownloader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmDownloader"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="587"/>
+        <CursorPos X="5" Y="610"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmmodelhub.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmModelHub"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="636"/>
+        <CursorPos X="5" Y="659"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmplayground.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPlayground"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="552"/>
+        <CursorPos X="5" Y="574"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmquantize.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmQuantize"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmServerControl"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="80"/>
+        <CursorPos X="3" Y="112"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmsettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="494"/>
+        <CursorPos X="5" Y="517"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uggufparser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="375"/>
+        <CursorPos X="5" Y="399"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uhardwareinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="553"/>
+        <CursorPos X="5" Y="577"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\ullamaprocess.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="521"/>
+        <CursorPos X="5" Y="543"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uprofilemanager.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="21"/>
+        <TopLine Value="477"/>
+        <CursorPos X="5" Y="501"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\core\uslotmonitor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="23"/>
+        <TopLine Value="445"/>
+        <CursorPos X="5" Y="469"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\usmoothbutton.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="24"/>
+        <TopLine Value="50"/>
+        <CursorPos X="28" Y="63"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmsplash.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="13"/>
+        <CursorPos X="5" Y="161"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\LazarusIDE\fpcsrc\rtl\win\wininc\struct.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1463"/>
+        <CursorPos X="86" Y="1469"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\LazarusIDE\fpcsrc\rtl\objpas\sysutils\osutilsh.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="11" Y="31"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmsettings.lfm"/>
+        <EditorIndex Value="26"/>
+        <TopLine Value="645"/>
+        <CursorPos X="4" Y="668"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="153" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="739" Column="22" TopLine="729"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="736" TopLine="731"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="750" Column="29" TopLine="734"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="794" Column="37" TopLine="779"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="803" Column="5" TopLine="781"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="744" Column="49" TopLine="733"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="152" Column="35" TopLine="141"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="138" Column="39" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="234" Column="23" TopLine="223"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="190" Column="24" TopLine="180"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="617" Column="60" TopLine="612"/>
+      </Position>
+      <Position>
+        <Filename Value="LlamaControlCenter.lpr"/>
+        <Caret Line="81" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="616" Column="5" TopLine="595"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="15" Column="62"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="527" Column="3" TopLine="525"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="112" Column="3" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="113" Column="3" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="114" Column="3" TopLine="103"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="115" Column="3" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="114" Column="3" TopLine="103"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="113" Column="3" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmservercontrol.pas"/>
+        <Caret Line="112" Column="3" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="694" Column="80" TopLine="681"/>
+      </Position>
+      <Position>
+        <Filename Value="LlamaControlCenter.lpr"/>
+        <Caret Line="81" TopLine="58"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="694" Column="80" TopLine="681"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="206" Column="3" TopLine="203"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="265" Column="9" TopLine="262"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="697" Column="26" TopLine="683"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="205" TopLine="203"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,600 @@
+object frmServerControl: TfrmServerControl
+  Left = 320
+  Height = 613
+  Top = 160
+  Width = 980
+  Caption = 'Server Control & Process Dashboard'
+  ClientHeight = 613
+  ClientWidth = 980
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pnlTopStatus: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 980
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 72
+    ClientWidth = 980
+    Color = clBackground
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object pnlStatusIndicator: TPanel
+      Left = 16
+      Height = 44
+      Top = 14
+      Width = 140
+      BevelOuter = bvNone
+      Caption = 'STOPPED'
+      Color = 4539717
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object lblEndpoint: TLabel
+      Left = 176
+      Height = 15
+      Top = 14
+      Width = 161
+      Caption = 'Endpoint: http://127.0.0.1:8080'
+      Font.Color = clWhite
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblPID: TLabel
+      Left = 176
+      Height = 15
+      Top = 38
+      Width = 53
+      Caption = 'PID: None'
+      Font.Color = clSilver
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblUptime: TLabel
+      Left = 280
+      Height = 15
+      Top = 38
+      Width = 87
+      Caption = 'Uptime: 00:00:00'
+      Font.Color = clSilver
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnStart: TButton
+      Left = 672
+      Height = 44
+      Top = 14
+      Width = 90
+      Anchors = [akTop, akRight]
+      Caption = 'Start'
+      Font.Height = -12
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnStartClick
+    end
+    object btnStop: TButton
+      Left = 770
+      Height = 44
+      Top = 14
+      Width = 90
+      Anchors = [akTop, akRight]
+      Caption = 'Stop'
+      Enabled = False
+      TabOrder = 2
+      OnClick = btnStopClick
+    end
+    object btnRestart: TButton
+      Left = 868
+      Height = 44
+      Top = 14
+      Width = 96
+      Anchors = [akTop, akRight]
+      Caption = 'Restart'
+      Enabled = False
+      TabOrder = 3
+      OnClick = btnRestartClick
+    end
+  end
+  object pnlMain: TPanel
+    Left = 0
+    Height = 541
+    Top = 72
+    Width = 980
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 541
+    ClientWidth = 980
+    TabOrder = 1
+    object pnlLeftConfig: TPanel
+      Left = 8
+      Height = 525
+      Top = 8
+      Width = 360
+      Align = alLeft
+      BorderSpacing.Around = 8
+      BevelOuter = bvNone
+      ClientHeight = 525
+      ClientWidth = 360
+      TabOrder = 0
+      object gbProfile: TGroupBox
+        Left = 0
+        Height = 100
+        Top = 0
+        Width = 360
+        Align = alTop
+        Caption = ' Active Server Profile '
+        ClientHeight = 80
+        ClientWidth = 356
+        TabOrder = 0
+        object cmbProfiles: TComboBox
+          Left = 12
+          Height = 23
+          Top = 10
+          Width = 332
+          Anchors = [akTop, akLeft, akRight]
+          ItemHeight = 15
+          Style = csDropDownList
+          TabOrder = 0
+          OnChange = cmbProfilesChange
+        end
+        object btnSaveProfile: TButton
+          Left = 12
+          Height = 26
+          Top = 42
+          Width = 100
+          Caption = 'Save Profile'
+          TabOrder = 1
+          OnClick = btnSaveProfileClick
+        end
+        object btnNewProfile: TButton
+          Left = 120
+          Height = 26
+          Top = 42
+          Width = 100
+          Caption = 'New / Clone'
+          TabOrder = 2
+          OnClick = btnNewProfileClick
+        end
+      end
+      object gbModel: TGroupBox
+        Left = 0
+        Height = 104
+        Top = 108
+        Width = 360
+        Align = alTop
+        BorderSpacing.Top = 8
+        Caption = ' Model (GGUF) '
+        ClientHeight = 84
+        ClientWidth = 356
+        TabOrder = 1
+        object lblModelFile: TLabel
+          Left = 12
+          Height = 15
+          Top = 6
+          Width = 81
+          Caption = 'GGUF File Path:'
+          ParentColor = False
+        end
+        object edtModelPath: TEdit
+          Left = 12
+          Height = 23
+          Top = 26
+          Width = 248
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 0
+          OnChange = edtModelPathChange
+        end
+        object btnBrowseModel: TButton
+          Left = 268
+          Height = 25
+          Top = 25
+          Width = 76
+          Anchors = [akTop, akRight]
+          Caption = 'Browse...'
+          TabOrder = 1
+          OnClick = btnBrowseModelClick
+        end
+        object lblModelFitAssessment: TLabel
+          Left = 12
+          Height = 15
+          Top = 56
+          Width = 242
+          Caption = 'Model Fit: Select a model to evaluate memory'
+          Font.Color = clBlue
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object gbParameters: TGroupBox
+        Left = 0
+        Height = 305
+        Top = 220
+        Width = 360
+        Align = alClient
+        BorderSpacing.Top = 8
+        Caption = ' Execution Parameters '
+        ClientHeight = 285
+        ClientWidth = 356
+        TabOrder = 2
+        object lblGpuLayers: TLabel
+          Left = 12
+          Height = 15
+          Top = 10
+          Width = 95
+          Caption = 'GPU Layers (-ngl):'
+          ParentColor = False
+        end
+        object seGpuLayers: TSpinEdit
+          Left = 12
+          Height = 23
+          Top = 30
+          Width = 100
+          MaxValue = 999
+          TabOrder = 0
+          Value = 33
+        end
+        object lblCtxSize: TLabel
+          Left = 132
+          Height = 15
+          Top = 10
+          Width = 89
+          Caption = 'Context Size (-c):'
+          ParentColor = False
+        end
+        object seCtxSize: TSpinEdit
+          Left = 132
+          Height = 23
+          Top = 30
+          Width = 100
+          Increment = 1024
+          MaxValue = 262144
+          MinValue = 512
+          TabOrder = 1
+          Value = 4096
+        end
+        object lblParallel: TLabel
+          Left = 248
+          Height = 15
+          Top = 10
+          Width = 71
+          Caption = 'Parallel (-np):'
+          ParentColor = False
+        end
+        object seParallel: TSpinEdit
+          Left = 248
+          Height = 23
+          Top = 30
+          Width = 96
+          MaxValue = 16
+          MinValue = 1
+          TabOrder = 2
+          Value = 1
+        end
+        object lblThreads: TLabel
+          Left = 12
+          Height = 15
+          Top = 64
+          Width = 65
+          Caption = 'Threads (-t):'
+          ParentColor = False
+        end
+        object seThreads: TSpinEdit
+          Left = 12
+          Height = 23
+          Top = 84
+          Width = 100
+          MaxValue = 128
+          MinValue = 1
+          TabOrder = 3
+          Value = 6
+        end
+        object lblBatchSize: TLabel
+          Left = 132
+          Height = 15
+          Top = 64
+          Width = 79
+          Caption = 'Batch Size (-b):'
+          ParentColor = False
+        end
+        object seBatchSize: TSpinEdit
+          Left = 132
+          Height = 23
+          Top = 84
+          Width = 100
+          Increment = 128
+          MaxValue = 4096
+          MinValue = 128
+          TabOrder = 4
+          Value = 512
+        end
+        object lblUBatchSize: TLabel
+          Left = 248
+          Height = 15
+          Top = 64
+          Width = 99
+          Caption = 'U-Batch Size (-ub):'
+          ParentColor = False
+        end
+        object seUBatchSize: TSpinEdit
+          Left = 248
+          Height = 23
+          Top = 84
+          Width = 96
+          Increment = 128
+          MaxValue = 4096
+          MinValue = 128
+          TabOrder = 5
+          Value = 512
+        end
+        object lblHost: TLabel
+          Left = 12
+          Height = 15
+          Top = 118
+          Width = 63
+          Caption = 'Host / Bind:'
+          ParentColor = False
+        end
+        object edtHost: TEdit
+          Left = 12
+          Height = 23
+          Top = 138
+          Width = 140
+          TabOrder = 6
+          Text = '127.0.0.1'
+        end
+        object lblPort: TLabel
+          Left = 168
+          Height = 15
+          Top = 118
+          Width = 25
+          Caption = 'Port:'
+          ParentColor = False
+        end
+        object sePort: TSpinEdit
+          Left = 168
+          Height = 23
+          Top = 138
+          Width = 96
+          MaxValue = 65535
+          MinValue = 1
+          TabOrder = 7
+          Value = 8080
+        end
+        object chkFlashAttn: TCheckBox
+          Left = 12
+          Height = 19
+          Top = 174
+          Width = 124
+          Caption = 'Flash Attention (-fa)'
+          Checked = True
+          State = cbChecked
+          TabOrder = 8
+        end
+        object chkContBatching: TCheckBox
+          Left = 180
+          Height = 19
+          Top = 174
+          Width = 159
+          Caption = 'Continuous Batching (-cb)'
+          Checked = True
+          State = cbChecked
+          TabOrder = 9
+        end
+        object chkNoMMap: TCheckBox
+          Left = 12
+          Height = 19
+          Top = 202
+          Width = 171
+          Caption = 'Disable MMAP (--no-mmap)'
+          TabOrder = 10
+        end
+        object chkMLock: TCheckBox
+          Left = 180
+          Height = 19
+          Top = 202
+          Width = 126
+          Caption = 'Lock RAM (--mlock)'
+          TabOrder = 11
+        end
+        object lblCustomArgs: TLabel
+          Left = 12
+          Height = 15
+          Top = 232
+          Width = 110
+          Caption = 'Extra CLI Arguments:'
+          ParentColor = False
+        end
+        object edtCustomArgs: TEdit
+          Left = 12
+          Height = 23
+          Top = 252
+          Width = 332
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 12
+        end
+      end
+    end
+    object splMiddle: TSplitter
+      Left = 376
+      Height = 541
+      Top = 0
+      Width = 6
+    end
+    object pnlRightViews: TPanel
+      Left = 390
+      Height = 525
+      Top = 8
+      Width = 582
+      Align = alClient
+      BorderSpacing.Around = 8
+      BevelOuter = bvNone
+      ClientHeight = 525
+      ClientWidth = 582
+      TabOrder = 2
+      object pgcRight: TPageControl
+        Left = 0
+        Height = 525
+        Top = 0
+        Width = 582
+        ActivePage = tsConsole
+        Align = alClient
+        TabIndex = 0
+        TabOrder = 0
+        object tsConsole: TTabSheet
+          Caption = 'Live Server Console'
+          ClientHeight = 497
+          ClientWidth = 574
+          object pnlConsoleToolbar: TPanel
+            Left = 0
+            Height = 36
+            Top = 0
+            Width = 574
+            Align = alTop
+            BevelOuter = bvNone
+            ClientHeight = 36
+            ClientWidth = 574
+            TabOrder = 0
+            object chkAutoScroll: TCheckBox
+              Left = 8
+              Height = 19
+              Top = 8
+              Width = 77
+              Caption = 'Auto-scroll'
+              Checked = True
+              State = cbChecked
+              TabOrder = 0
+            end
+            object btnClearConsole: TButton
+              Left = 494
+              Height = 26
+              Top = 5
+              Width = 75
+              Anchors = [akTop, akRight]
+              Caption = 'Clear'
+              TabOrder = 1
+              OnClick = btnClearConsoleClick
+            end
+            object btnOpenBrowser: TButton
+              Left = 368
+              Height = 26
+              Top = 5
+              Width = 120
+              Anchors = [akTop, akRight]
+              Caption = 'Open Web UI'
+              TabOrder = 2
+              OnClick = btnOpenBrowserClick
+            end
+          end
+          object mmoConsole: TMemo
+            Left = 0
+            Height = 461
+            Top = 36
+            Width = 574
+            Align = alClient
+            Color = 1973790
+            Font.Color = 14474460
+            Font.Height = -12
+            Font.Name = 'Consolas'
+            ParentFont = False
+            ReadOnly = True
+            ScrollBars = ssAutoBoth
+            TabOrder = 1
+            WordWrap = False
+          end
+        end
+        object tsSlots: TTabSheet
+          Caption = 'Active Inference Slots'
+          ClientHeight = 497
+          ClientWidth = 574
+          object lvSlots: TListView
+            Left = 0
+            Height = 497
+            Top = 0
+            Width = 574
+            Align = alClient
+            Columns = <            
+              item
+                Caption = 'Slot ID'
+                Width = 60
+              end            
+              item
+                Caption = 'Task'
+                Width = 60
+              end            
+              item
+                Caption = 'State'
+                Width = 100
+              end            
+              item
+                Caption = 'Speed (t/s)'
+                Width = 90
+              end            
+              item
+                Caption = 'Prompt Tok'
+                Width = 85
+              end            
+              item
+                Caption = 'Gen Tok'
+                Width = 85
+              end            
+              item
+                Caption = 'Progress'
+                Width = 90
+              end>
+            GridLines = True
+            ReadOnly = True
+            RowSelect = True
+            TabOrder = 0
+            ViewStyle = vsReport
+          end
+        end
+        object tsHardware: TTabSheet
+          Caption = 'Hardware & Fit Summary'
+          ClientHeight = 497
+          ClientWidth = 574
+          object mmoHardwareInfo: TMemo
+            Left = 8
+            Height = 481
+            Top = 8
+            Width = 558
+            Align = alClient
+            BorderSpacing.Around = 8
+            Color = clWindow
+            Font.Height = -12
+            Font.Name = 'Consolas'
+            ParentFont = False
+            ReadOnly = True
+            ScrollBars = ssAutoBoth
+            TabOrder = 0
+          end
+        end
+      end
+    end
+  end
+  object tmrStatusUpdate: TTimer
+    OnTimer = tmrStatusUpdateTimer
+    Left = 40
+    Top = 16
+  end
+  object dlgOpenModel: TOpenDialog
+    Title = 'Select GGUF Model File'
+    Filter = 'GGUF Models (*.gguf)|*.gguf|All Files (*.*)|*.*'
+    Left = 112
+    Top = 16
+  end
+end

@@ -1,0 +1,757 @@
+object frmMain: TfrmMain
+  Left = 250
+  Height = 720
+  Top = 120
+  Width = 1120
+  Caption = 'Llama Control Center - Local AI Management Studio'
+  ClientHeight = 720
+  ClientWidth = 1120
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Menu = mnuMain
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  object pnlNavigation: TPanel
+    Left = 0
+    Height = 56
+    Top = 0
+    Width = 1120
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 56
+    ClientWidth = 1120
+    Color = 2105376
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object btnNavServer: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 10
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Server Control'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavServerClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnNavModelHub: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 145
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Model Hub'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavModelHubClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnNavPlayground: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 280
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'AI Playground'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavPlaygroundClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnNavDownloader: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 415
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Downloader'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavDownloaderClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnNavQuantize: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 550
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Quantizer'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavQuantizeClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnNavBench: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 685
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alLeft
+      BorderSpacing.Around = 10
+      Caption = 'Benchmark'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavBenchClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+    object btnNavSettings: TColorSpeedButton
+      Cursor = crHandPoint
+      Left = 985
+      Height = 36
+      Top = 10
+      Width = 125
+      Align = alRight
+      BorderSpacing.Around = 10
+      Caption = 'Setting'
+      Flat = True
+      Font.Color = 15989988
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnNavSettingsClick
+      TextAutoSize = True
+      Toggle = False
+      Pressed = False
+      PopupMode = False
+      StateNormal.Color = 10242074
+      StateNormal.BorderColor = 10524182
+      StateNormal.BorderWidth = 1
+      StateHover.Color = 2345688
+      StateHover.BorderColor = 7462888
+      StateHover.BorderWidth = 1
+      StateActive.Color = 10120989
+      StateActive.BorderColor = 10048512
+      StateActive.BorderWidth = 1
+      StateDisabled.Color = 13421772
+      StateDisabled.BorderColor = 12566463
+      StateDisabled.BorderWidth = 1
+    end
+  end
+  object pnlClientArea: TPanel
+    Left = 0
+    Height = 641
+    Top = 56
+    Width = 1120
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 641
+    ClientWidth = 1120
+    TabOrder = 1
+    object pnlCardsTop: TPanel
+      Left = 8
+      Height = 180
+      Top = 8
+      Width = 1104
+      Align = alTop
+      BorderSpacing.Around = 8
+      BevelOuter = bvNone
+      ClientHeight = 180
+      ClientWidth = 1104
+      TabOrder = 0
+      object gbServerOverview: TGroupBox
+        Left = 0
+        Height = 180
+        Top = 0
+        Width = 370
+        Align = alLeft
+        Caption = ' Inference Server Engine '
+        ClientHeight = 160
+        ClientWidth = 366
+        TabOrder = 0
+        object pnlStateBadge: TPanel
+          Left = 12
+          Height = 32
+          Top = 8
+          Width = 110
+          BevelOuter = bvNone
+          Caption = 'STOPPED'
+          Color = 4539717
+          Font.Color = clWhite
+          Font.Height = -12
+          Font.Style = [fsBold]
+          ParentBackground = False
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 0
+        end
+        object lblMainEndpoint: TLabel
+          Left = 132
+          Height = 15
+          Top = 8
+          Width = 174
+          Caption = 'Endpoint: http://127.0.0.1:8080'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMainModel: TLabel
+          Left = 132
+          Height = 15
+          Top = 26
+          Width = 132
+          Caption = 'Model: No model loaded'
+          Font.Color = clNavy
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblMainPID: TLabel
+          Left = 12
+          Height = 15
+          Top = 48
+          Width = 53
+          Caption = 'PID: None'
+          ParentColor = False
+        end
+        object lblMainUptime: TLabel
+          Left = 132
+          Height = 15
+          Top = 48
+          Width = 87
+          Caption = 'Uptime: 00:00:00'
+          ParentColor = False
+        end
+        object btnQuickStart: TButton
+          Left = 12
+          Height = 32
+          Top = 76
+          Width = 100
+          Caption = 'Start Server'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 1
+          OnClick = btnQuickStartClick
+        end
+        object btnQuickStop: TButton
+          Left = 118
+          Height = 32
+          Top = 76
+          Width = 100
+          Caption = 'Stop Server'
+          Enabled = False
+          TabOrder = 2
+          OnClick = btnQuickStopClick
+        end
+        object btnQuickRestart: TButton
+          Left = 224
+          Height = 32
+          Top = 76
+          Width = 100
+          Caption = 'Restart'
+          Enabled = False
+          TabOrder = 3
+          OnClick = btnQuickRestartClick
+        end
+        object btnOpenWebUI: TButton
+          Left = 12
+          Height = 32
+          Top = 114
+          Width = 312
+          Caption = 'Open Web UI in Browser'
+          TabOrder = 4
+          OnClick = btnOpenWebUIClick
+        end
+      end
+      object gbHardwareOverview: TGroupBox
+        Left = 378
+        Height = 180
+        Top = 0
+        Width = 430
+        Align = alLeft
+        BorderSpacing.Left = 8
+        Caption = ' System & GPU Telemetry '
+        ClientHeight = 160
+        ClientWidth = 426
+        TabOrder = 1
+        object lblCPUName: TLabel
+          Left = 12
+          Height = 15
+          Top = 6
+          Width = 152
+          Caption = 'CPU: Detecting Hardware...'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblRAMUsage: TLabel
+          Left = 12
+          Height = 15
+          Top = 32
+          Width = 132
+          Caption = 'System RAM: 0 GB / 0 GB'
+          ParentColor = False
+        end
+        object pbRAM: TProgressBar
+          Left = 12
+          Height = 14
+          Top = 50
+          Width = 402
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 0
+        end
+        object lblGPUName: TLabel
+          Left = 12
+          Height = 15
+          Top = 74
+          Width = 144
+          Caption = 'GPU: Querying Adapters...'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblVRAMUsage: TLabel
+          Left = 12
+          Height = 15
+          Top = 96
+          Width = 154
+          Caption = 'Dedicated VRAM: 0 GB / 0 GB'
+          ParentColor = False
+        end
+        object pbVRAM: TProgressBar
+          Left = 12
+          Height = 14
+          Top = 116
+          Width = 402
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 1
+        end
+      end
+      object gbInferenceOverview: TGroupBox
+        Left = 816
+        Height = 180
+        Top = 0
+        Width = 288
+        Align = alClient
+        BorderSpacing.Left = 8
+        Caption = ' Real-Time Throughput '
+        ClientHeight = 160
+        ClientWidth = 284
+        TabOrder = 2
+        object lblSlotCount: TLabel
+          Left = 12
+          Height = 15
+          Top = 12
+          Width = 97
+          Caption = 'Active Slots: 0 / 0'
+          Font.Height = -12
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblThroughput: TLabel
+          Left = 12
+          Height = 25
+          Top = 40
+          Width = 119
+          Caption = '0.00 tokens/s'
+          Font.Color = clGreen
+          Font.Height = -19
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblTotalTokensProcessed: TLabel
+          Left = 12
+          Height = 15
+          Top = 80
+          Width = 128
+          Caption = 'Total Tokens Decoded: 0'
+          ParentColor = False
+        end
+        object lblPromptProcessingSpeed: TLabel
+          Left = 12
+          Height = 15
+          Top = 104
+          Width = 117
+          Caption = 'Prompt Prefill: 0.00 t/s'
+          Font.Color = clNavy
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+    end
+    object gbLogViewer: TGroupBox
+      Left = 8
+      Height = 437
+      Top = 196
+      Width = 1104
+      Align = alClient
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 8
+      Caption = ' Real-Time Unified Event & Output Log '
+      ClientHeight = 417
+      ClientWidth = 1100
+      TabOrder = 1
+      object pnlLogToolbar: TPanel
+        Left = 0
+        Height = 36
+        Top = 0
+        Width = 1100
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 36
+        ClientWidth = 1100
+        TabOrder = 0
+        object chkLogAutoScroll: TCheckBox
+          Left = 12
+          Height = 19
+          Top = 8
+          Width = 77
+          Caption = 'Auto-scroll'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+        end
+        object lblFilterLevel: TLabel
+          Left = 120
+          Height = 15
+          Top = 10
+          Width = 54
+          Caption = 'Min Level:'
+          ParentColor = False
+        end
+        object cmbLogLevelFilter: TComboBox
+          Left = 190
+          Height = 23
+          Top = 6
+          Width = 120
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'DEBUG'
+            'INFO'
+            'WARN'
+            'ERROR'
+          )
+          Style = csDropDownList
+          TabOrder = 1
+          Text = 'DEBUG'
+          OnChange = cmbLogLevelFilterChange
+        end
+        object btnClearLogs: TButton
+          Left = 1012
+          Height = 26
+          Top = 5
+          Width = 76
+          Anchors = [akTop, akRight]
+          Caption = 'Clear'
+          TabOrder = 2
+          OnClick = btnClearLogsClick
+        end
+        object btnOpenLogsFolder: TButton
+          Left = 884
+          Height = 26
+          Top = 5
+          Width = 120
+          Anchors = [akTop, akRight]
+          Caption = 'Open Logs Dir'
+          TabOrder = 3
+          OnClick = btnOpenLogsFolderClick
+        end
+      end
+      object mmoMainLog: TMemo
+        Left = 0
+        Height = 381
+        Top = 36
+        Width = 1100
+        Align = alClient
+        Color = 1973790
+        Font.Color = 14474460
+        Font.Height = -12
+        Font.Name = 'Consolas'
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 1
+        WordWrap = False
+      end
+    end
+  end
+  object statMain: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 697
+    Width = 1120
+    Panels = <    
+      item
+        Text = 'Engine: Stopped'
+        Width = 180
+      end    
+      item
+        Text = 'Target: 127.0.0.1:8080'
+        Width = 200
+      end    
+      item
+        Text = 'RAM: 0% | VRAM: 0%'
+        Width = 240
+      end    
+      item
+        Text = 'Throughput: 0 t/s'
+        Width = 180
+      end    
+      item
+        Text = 'Ready'
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object mnuMain: TMainMenu
+    Left = 24
+    Top = 80
+    object mnuFile: TMenuItem
+      Caption = '&File'
+      object mnuFileSettings: TMenuItem
+        Caption = '&Settings...'
+        OnClick = mnuFileSettingsClick
+      end
+      object mnuFileSep1: TMenuItem
+        Caption = '-'
+      end
+      object mnuFileExit: TMenuItem
+        Caption = 'E&xit'
+        OnClick = mnuFileExitClick
+      end
+    end
+    object mnuServer: TMenuItem
+      Caption = '&Server'
+      object mnuServerStart: TMenuItem
+        Caption = '&Start Server'
+        OnClick = btnQuickStartClick
+      end
+      object mnuServerStop: TMenuItem
+        Caption = 'S&top Server'
+        Enabled = False
+        OnClick = btnQuickStopClick
+      end
+      object mnuServerRestart: TMenuItem
+        Caption = '&Restart Server'
+        Enabled = False
+        OnClick = btnQuickRestartClick
+      end
+      object mnuServerSep1: TMenuItem
+        Caption = '-'
+      end
+      object mnuServerWebUI: TMenuItem
+        Caption = 'Open &Web UI'
+        OnClick = btnOpenWebUIClick
+      end
+    end
+    object mnuTools: TMenuItem
+      Caption = '&Tools'
+      object mnuToolsServerControl: TMenuItem
+        Caption = 'Server &Control Dashboard'
+        OnClick = btnNavServerClick
+      end
+      object mnuToolsModelHub: TMenuItem
+        Caption = '&Model Hub (Hugging Face)'
+        OnClick = btnNavModelHubClick
+      end
+      object mnuToolsPlayground: TMenuItem
+        Caption = 'AI &Playground (Chat)'
+        OnClick = btnNavPlaygroundClick
+      end
+      object mnuToolsDownloader: TMenuItem
+        Caption = 'Model &Downloader'
+        OnClick = btnNavDownloaderClick
+      end
+      object mnuToolsQuantize: TMenuItem
+        Caption = 'Model &Quantizer (llama-quantize)'
+        OnClick = btnNavQuantizeClick
+      end
+      object mnuToolsBench: TMenuItem
+        Caption = '&Benchmark Suite (llama-bench)'
+        OnClick = btnNavBenchClick
+      end
+    end
+    object mnuHelp: TMenuItem
+      Caption = '&Help'
+      object mnuHelpDocs: TMenuItem
+        Caption = 'llama.cpp &Documentation'
+        OnClick = mnuHelpDocsClick
+      end
+      object mnuHelpSep1: TMenuItem
+        Caption = '-'
+      end
+      object mnuHelpAbout: TMenuItem
+        Caption = '&About Llama Control Center'
+        OnClick = mnuHelpAboutClick
+      end
+    end
+  end
+  object tmrTelemetry: TTimer
+    OnTimer = tmrTelemetryTimer
+    Left = 96
+    Top = 80
+  end
+  object trayMain: TTrayIcon
+    PopUpMenu = popTray
+    Visible = True
+    OnClick = trayMainClick
+    Left = 168
+    Top = 80
+  end
+  object popTray: TPopupMenu
+    Left = 240
+    Top = 80
+    object mnuTrayShow: TMenuItem
+      Caption = 'Show Control Center'
+      Default = True
+      OnClick = mnuTrayShowClick
+    end
+    object mnuTrayStartStop: TMenuItem
+      Caption = 'Start Server'
+      OnClick = btnQuickStartClick
+    end
+    object mnuTraySep1: TMenuItem
+      Caption = '-'
+    end
+    object mnuTrayExit: TMenuItem
+      Caption = 'Exit Application'
+      OnClick = mnuFileExitClick
+    end
+  end
+  object ProcKILL: TProcess
+    Active = False
+    CommandLine = 'taskkill /IM LlamaControlCenter.exe /F'
+    Executable = 'taskkill'
+    Parameters.Strings = (
+      '/IM'
+      'LlamaControlCenter.exe'
+      '/F'
+    )
+    Options = [poUsePipes, poNoConsole]
+    Priority = ppNormal
+    StartupOptions = []
+    ShowWindow = swoNone
+    WindowColumns = 0
+    WindowHeight = 0
+    WindowLeft = 0
+    WindowRows = 0
+    WindowTop = 0
+    WindowWidth = 0
+    FillAttribute = 0
+    Left = 396
+    Top = 247
+  end
+end
