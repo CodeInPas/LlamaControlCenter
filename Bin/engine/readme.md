@@ -1,1 +1,1 @@
-Download llamacpp and extract [here](https://llama-cpp.com/)
+Download llamacpp [ https://llama-cpp.com/ ] and extract here
