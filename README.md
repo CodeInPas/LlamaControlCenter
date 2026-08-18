@@ -1,6 +1,6 @@
 # Llama Control Center 🦙💻
 
-![Uploading image.png…]()
+
 
 **Llama Control Center** adalah aplikasi *suite* manajemen AI lokal dan antarmuka grafis (GUI) modern untuk [llama.cpp](https://github.com/ggerganov/llama.cpp), yang dibangun menggunakan **Free Pascal** dan **Lazarus LCL**. Aplikasi ini dirancang untuk memudahkan pengguna dalam mengelola model GGUF, menjalankan server inferensi, memantau perangkat keras, hingga melakukan *benchmark* performa secara lokal.
 
