@@ -12,24 +12,24 @@
 * **AI Playground**: Antarmuka obrolan interaktif dengan dukungan *streaming* untuk menguji model secara langsung.
 * **Performance & Inference Benchmark**: Mengintegrasikan `llama-bench` untuk menguji kecepatan *Prompt Processing* (PP) dan *Text Generation* (TG) lengkap dengan fitur ekspor hasil ke format CSV.
 * **Model Downloader & Quantizer Studio**: Utilitas terpadu untuk mengunduh model dan mengelola proses kuantisasi.
-* **System Tray & Config Management**: Mendukung fitur minimisasi ke *system tray* serta penyimpanan konfigurasi otomatis berbasis JSON dengan fitur *Smart Path Resolver*[cite: 1].
+* **System Tray & Config Management**: Mendukung fitur minimisasi ke *system tray* serta penyimpanan konfigurasi otomatis berbasis JSON dengan fitur *Smart Path Resolver*
 
 ---
 
 ## 🛠️ Teknologi yang Digunakan
 
-* **Bahasa Pemrograman**: Object Pascal (Free Pascal)[cite: 1]
-* **Framework GUI**: Lazarus Component Library (LCL)[cite: 1]
-* **Backend Engine**: `llama.cpp` (`llama-server`, `llama-bench`)[cite: 1]
+* **Bahasa Pemrograman**: Object Pascal (Free Pascal)
+* **Framework GUI**: Lazarus Component Library (LCL)
+* **Backend Engine**: `llama.cpp` (`llama-server`, `llama-bench`)
 
 ---
 
 ## ⚙️ Persyaratan Sistem & Instalasi
 
-1. **Sistem Operasi**: Windows (x64)[cite: 1].
-2. **Biner Pendukung**: Pastikan file eksekusi `llama-server.exe` dan `llama-bench.exe` diletakkan di dalam folder direktori biner aplikasi (misalnya `bin/engine/`) atau dikonfigurasi melalui menu pengaturan[cite: 1].
+1. **Sistem Operasi**: Windows (x64)
+2. **Biner Pendukung**: Pastikan file eksekusi `llama-server.exe` dan `llama-bench.exe` diletakkan di dalam folder direktori biner aplikasi (misalnya `bin/engine/`) atau dikonfigurasi melalui menu pengaturan
 3. **Lazarus IDE** (opsional untuk *development*):
-   * Lazarus versi terbaru dengan kompiler Free Pascal yang mendukung mode `objfpc`[cite: 1].
+   * Lazarus versi terbaru dengan kompiler Free Pascal yang mendukung mode `objfpc`
 
 ---
 
