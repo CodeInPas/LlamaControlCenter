@@ -1,0 +1,84 @@
+object frmAbout: TfrmAbout
+  Left = 450
+  Height = 250
+  Top = 250
+  Width = 420
+  BorderStyle = bsDialog
+  Caption = 'About Llama Control Center'
+  ClientHeight = 250
+  ClientWidth = 420
+  Position = poScreenCenter
+  LCLVersion = '4.4.0.0'
+  object pnlContent: TPanel
+    Left = 12
+    Height = 226
+    Top = 12
+    Width = 396
+    BevelOuter = bvNone
+    ClientHeight = 226
+    ClientWidth = 396
+    TabOrder = 0
+    object lblAppName: TLabel
+      Left = 24
+      Height = 25
+      Top = 20
+      Width = 179
+      Caption = 'Llama Control Center'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -18
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lblVersion: TLabel
+      Left = 24
+      Height = 15
+      Top = 50
+      Width = 65
+      Caption = 'Version 1.0.0'
+      ParentFont = False
+    end
+    object lblDescription: TLabel
+      Left = 24
+      Height = 15
+      Top = 82
+      Width = 552
+      Caption = 'A high-performance local AI management suite and modern graphical user interface (GUI) for llama.cpp.'
+      ParentFont = False
+      WordWrap = True
+    end
+    object lblCopyright: TLabel
+      Left = 24
+      Height = 15
+      Top = 104
+      Width = 192
+      Caption = 'Built with Free Pascal && Lazarus LCL.'
+      ParentFont = False
+    end
+    object btnClose: TButton
+      Left = 296
+      Height = 30
+      Top = 176
+      Width = 75
+      Caption = 'Close'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+      OnClick = btnOKClick
+    end
+    object KLinkLabel1: TKLinkLabel
+      Cursor = crHandPoint
+      Left = 24
+      Height = 15
+      Top = 184
+      Width = 170
+      Caption = 'LLAMAControlCenter on Github'
+      Font.Color = clBlue
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      ShowURLAsHint = True
+      URL = 'https://github.com/CodeInPas/LlamaControlCenter'
+    end
+  end
+end

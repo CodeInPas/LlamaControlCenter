@@ -10,7 +10,7 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   ComCtrls, Menus, LCLIntf, Buttons, ColorSpeedButton, DateUtils, process,
   uconfigtypes, uchattypes, uhardwareinfo, uprofilemanager, ullamaprocess,
-  uslotmonitor, uansiparser, uformatting, ulogger, ufrmsettings,
+  uslotmonitor, uansiparser, uformatting, ulogger, ufrmsettings, ufrmabout,
   ufrmservercontrol, ufrmmodelhub, ufrmdownloader, ufrmquantize, ufrmbenchmark,
   ufrmplayground, usmoothbutton,fpjson,jsonparser,ujsonhelper;
 
@@ -692,16 +692,7 @@ begin
   OpenURL('https://github.com/ggerganov/llama.cpp');
 end;
 
-procedure TfrmMain.mnuHelpAboutClick(Sender: TObject);
-begin
-  ShowMessage(
-    'Llama Control Center' + sLineBreak +
-    'Version 1.0.0' + sLineBreak + sLineBreak +
-    'A high-performance local AI management suite and GUI for llama.cpp' + sLineBreak +
-    'Built with Free Pascal & Lazarus LCL.'+ sLineBreak +       sLineBreak +
-    'Developer : KangOz - NKRI '
-  );
-end;
+
 
 procedure TfrmMain.tmrTelemetryTimer(Sender: TObject);
 var
@@ -868,6 +859,14 @@ begin
 
   if FileExists(AppDir + 'llama-server.exe') then
     Exit(AppDir + 'llama-server.exe');
+end;
+
+procedure TfrmMain.mnuHelpAboutClick(Sender: TObject);
+begin
+  if not Assigned(frmAbout) then
+    Application.CreateForm(TfrmAbout, frmAbout);
+
+  frmAbout.ShowModal;
 end;
 
 end.
