@@ -38,7 +38,7 @@ uses
   ufrmquantize,
   ufrmbenchmark,
   ufrmsplash,
-  ufrmsettings ;
+  ufrmsettings;
 
 {$R *.res}
 
@@ -76,6 +76,5 @@ begin
 
   // 3. Tutup Splash Screen & Tampilkan Form Utama
   TfrmSplash.CloseSplash;
-
   Application.Run;
 end.
