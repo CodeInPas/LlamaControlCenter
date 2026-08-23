@@ -1,43 +1,50 @@
+
+
 # Llama Control Center 🦙💻
 
 
-<img width="953" height="502" alt="image" src="https://github.com/user-attachments/assets/abc6d912-c196-47c6-9a0d-8fd66f764e80" />
-
-**Llama Control Center** adalah aplikasi *suite* manajemen AI lokal dan antarmuka grafis (GUI) modern untuk [llama.cpp](https://github.com/ggerganov/llama.cpp), yang dibangun menggunakan **Free Pascal** dan **Lazarus LCL**. Aplikasi ini dirancang untuk memudahkan pengguna dalam mengelola model GGUF, menjalankan server inferensi, memantau perangkat keras, hingga melakukan *benchmark* performa secara lokal.
+**Llama Control Center** is a local AI management suite and modern Graphical User Interface (GUI) for [llama.cpp](https://github.com/ggerganov/llama.cpp), built with **Free Pascal** and **Lazarus LCL**. It is designed to streamline managing GGUF models, running inference servers, monitoring hardware, and benchmarking performance locally.
 
 ---
 
-## 🚀 Fitur Utama
+<img width="952" height="502" alt="image" src="https://github.com/user-attachments/assets/c58a2269-19f7-4f72-83b8-4119fc984fb3" />
 
-* **Server Control & Real-Time Telemetry**: Mengelola *inference engine* (`llama-server`) dengan kontrol penuh (Start, Stop, Restart), pemantauan PID secara *real-time*, serta pelacakan status *uptime*.
-* **Hardware Telemetry**: Memantau penggunaan sumber daya perangkat keras secara langsung meliputi pemanfaatan CPU, System RAM, dan VRAM GPU.
-* **Model Hub (GGUF Browser)**: Menjelajahi dan menginspeksi metadata file GGUF secara mendalam termasuk arsitektur model, jumlah parameter, tipe kuantisasi, dan ukuran file.
-* **AI Playground**: Antarmuka obrolan interaktif dengan dukungan *streaming* untuk menguji model secara langsung.
-* **Performance & Inference Benchmark**: Mengintegrasikan `llama-bench` untuk menguji kecepatan *Prompt Processing* (PP) dan *Text Generation* (TG) lengkap dengan fitur ekspor hasil ke format CSV.
-* **Model Downloader & Quantizer Studio**: Utilitas terpadu untuk mengunduh model dan mengelola proses kuantisasi.
-* **System Tray & Config Management**: Mendukung fitur minimisasi ke *system tray* serta penyimpanan konfigurasi otomatis berbasis JSON dengan fitur *Smart Path Resolver*
+
+## 🚀 Key Features
+
+* **Server Control & Real-Time Telemetry**: Manage the inference engine (`llama-server`) with full control (Start, Stop, Restart), real-time PID monitoring, and uptime tracking.
+* **Hardware Telemetry**: Monitor live hardware resource usage, including CPU, System RAM, and GPU VRAM utilization.
+* **Model Hub (GGUF Browser)**: Explore and inspect in-depth GGUF metadata, including model architecture, parameter count, quantization type, and file size.
+* **AI Playground**: Interactive chat interface with streaming support for instant model testing.
+* **Performance & Inference Benchmark**: Integrated `llama-bench` to evaluate Prompt Processing (PP) and Text Generation (TG) speeds, complete with CSV export support.
+* **Model Downloader & Quantizer Studio**: Unified utility to download models and manage quantization workflows.
+* **System Tray & Config Management**: Supports minimize-to-tray and automated JSON-based configuration management with a *Smart Path Resolver*.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Tech Stack
 
-* **Bahasa Pemrograman**: Object Pascal (Free Pascal)
-* **Framework GUI**: Lazarus Component Library (LCL)
+* **Programming Language**: Object Pascal (Free Pascal)
+* **GUI Framework**: Lazarus Component Library (LCL)
 * **Backend Engine**: `llama.cpp` (`llama-server`, `llama-bench`)
 
 ---
 
-## ⚙️ Persyaratan Sistem & Instalasi
+## ⚙️ System Requirements & Installation
 
-1. **Sistem Operasi**: Windows (x64)
-2. **Biner Pendukung**: Pastikan file eksekusi `llama-server.exe` dan `llama-bench.exe` diletakkan di dalam folder direktori biner aplikasi (misalnya `bin/engine/`) atau dikonfigurasi melalui menu pengaturan
-3. **Lazarus IDE** (opsional untuk *development*):
-   * Lazarus versi terbaru dengan kompiler Free Pascal yang mendukung mode `objfpc`
+1. **Operating System**: Windows (x64)
+2. **Supporting Binaries**: Ensure `llama-server.exe` and `llama-bench.exe` are placed in the application's binary directory (e.g., `bin/engine/`) or configured via the settings menu.
+3. **Lazarus IDE** (optional, for development):
+* Latest version of Lazarus with a Free Pascal compiler supporting `objfpc` mode.
+
+
 
 ---
 
-## 🚀 Memulai (Quick Start)
+## 🚀 Quick Start
 
-1. Clone repositori ini ke komputer Anda:
-   ```bash
-   git clone [https://github.com/username/LlamaControlCenter.git](https://github.com/username/LlamaControlCenter.git)
+1. Clone this repository to your local machine:
+```bash
+git clone https://github.com/username/LlamaControlCenter.git
+
+```
