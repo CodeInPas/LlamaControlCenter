@@ -47,6 +47,8 @@
 ```bash
 git clone https://github.com/username/LlamaControlCenter.git
 
+bash```
+
 ---
 ## Download
 
