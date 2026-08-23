@@ -47,4 +47,6 @@
 ```bash
 git clone https://github.com/username/LlamaControlCenter.git
 
-```
+## Download
+
+Download Binary => https://github.com/CodeInPas/LlamaControlCenter/releases/ 
