@@ -8,9 +8,9 @@
       <Unit>
         <Filename Value="LlamaControlCenter.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="57"/>
-        <CursorPos Y="80"/>
-        <UsageCount Value="36"/>
+        <TopLine Value="51"/>
+        <CursorPos Y="69"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -19,9 +19,11 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
-        <CursorPos X="76" Y="13"/>
-        <UsageCount Value="36"/>
+        <TopLine Value="211"/>
+        <CursorPos X="25" Y="223"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -31,7 +33,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="392"/>
         <CursorPos X="5" Y="416"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -40,7 +42,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="189"/>
         <CursorPos X="5" Y="214"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -49,7 +51,7 @@
         <EditorIndex Value="19"/>
         <TopLine Value="327"/>
         <CursorPos X="5" Y="352"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -58,7 +60,7 @@
         <EditorIndex Value="21"/>
         <TopLine Value="275"/>
         <CursorPos X="5" Y="300"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -67,7 +69,7 @@
         <EditorIndex Value="23"/>
         <TopLine Value="437"/>
         <CursorPos X="5" Y="462"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -76,7 +78,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="281"/>
         <CursorPos X="5" Y="306"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -85,7 +87,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="298"/>
         <CursorPos X="5" Y="322"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -94,7 +96,7 @@
         <EditorIndex Value="16"/>
         <TopLine Value="289"/>
         <CursorPos X="5" Y="314"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -104,7 +106,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="src\network\uhttpdownloader.pas"/>
@@ -112,7 +114,7 @@
         <EditorIndex Value="18"/>
         <TopLine Value="410"/>
         <CursorPos X="5" Y="434"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -122,7 +124,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="src\network\usseclient.pas"/>
@@ -130,7 +132,7 @@
         <EditorIndex Value="26"/>
         <TopLine Value="353"/>
         <CursorPos X="5" Y="437"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -142,7 +144,7 @@
         <EditorIndex Value="6"/>
         <TopLine Value="229"/>
         <CursorPos X="15" Y="252"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -155,7 +157,7 @@
         <EditorIndex Value="7"/>
         <TopLine Value="587"/>
         <CursorPos X="5" Y="610"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -168,7 +170,7 @@
         <EditorIndex Value="9"/>
         <TopLine Value="636"/>
         <CursorPos X="5" Y="659"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -181,7 +183,7 @@
         <EditorIndex Value="10"/>
         <TopLine Value="552"/>
         <CursorPos X="5" Y="574"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -192,7 +194,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="11"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -205,7 +207,7 @@
         <EditorIndex Value="12"/>
         <TopLine Value="80"/>
         <CursorPos X="3" Y="112"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -218,7 +220,7 @@
         <EditorIndex Value="13"/>
         <TopLine Value="494"/>
         <CursorPos X="5" Y="517"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -228,7 +230,7 @@
         <EditorIndex Value="15"/>
         <TopLine Value="375"/>
         <CursorPos X="5" Y="399"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -237,7 +239,7 @@
         <EditorIndex Value="17"/>
         <TopLine Value="553"/>
         <CursorPos X="5" Y="577"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -246,7 +248,7 @@
         <EditorIndex Value="20"/>
         <TopLine Value="521"/>
         <CursorPos X="5" Y="543"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -255,7 +257,7 @@
         <EditorIndex Value="22"/>
         <TopLine Value="477"/>
         <CursorPos X="5" Y="501"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -264,7 +266,7 @@
         <EditorIndex Value="24"/>
         <TopLine Value="445"/>
         <CursorPos X="5" Y="469"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -273,7 +275,7 @@
         <EditorIndex Value="25"/>
         <TopLine Value="50"/>
         <CursorPos X="28" Y="63"/>
-        <UsageCount Value="32"/>
+        <UsageCount Value="33"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -281,8 +283,21 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="14"/>
         <CursorPos X="5" Y="161"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="src\forms\ufrmabout.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="28"/>
+        <CursorPos X="5" Y="50"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="D:\LazarusIDE\fpcsrc\rtl\win\wininc\struct.inc"/>
@@ -306,20 +321,6 @@
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
-        <Filename Value="src\forms\ufrmabout.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmAbout"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="28"/>
-        <CursorPos X="5" Y="50"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="src\forms\ufrmabout.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="46"/>
@@ -329,14 +330,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="src\forms\ufrmmain.pas"/>
-        <Caret Line="138" Column="39" TopLine="120"/>
-      </Position>
-      <Position>
-        <Filename Value="src\forms\ufrmmain.pas"/>
-        <Caret Line="234" Column="23" TopLine="223"/>
-      </Position>
       <Position>
         <Filename Value="src\forms\ufrmmain.pas"/>
         <Caret Line="190" Column="24" TopLine="180"/>
@@ -448,6 +441,14 @@
       <Position>
         <Filename Value="src\forms\ufrmabout.pas"/>
         <Caret Line="49" Column="5" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="13" Column="76"/>
+      </Position>
+      <Position>
+        <Filename Value="src\forms\ufrmmain.pas"/>
+        <Caret Line="274" Column="24" TopLine="259"/>
       </Position>
     </JumpHistory>
     <RunParams>

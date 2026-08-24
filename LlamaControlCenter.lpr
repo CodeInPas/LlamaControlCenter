@@ -46,18 +46,8 @@ begin
   RequireDerivedFormResource := True;
   Application.Scaled:=True;
   Application.Initialize;
+Application.CreateForm(TfrmMain, frmMain);
 
-  // Primary Application Window
-  Application.CreateForm(TfrmMain, frmMain);
-
-  // Auxiliary Module Forms (On-demand creation or pre-registered instances)
-  Application.CreateForm(TfrmServerControl, frmServerControl);
-  Application.CreateForm(TfrmModelHub, frmModelHub);
-  Application.CreateForm(TfrmPlayground, frmPlayground);
-  Application.CreateForm(TfrmDownloader, frmDownloader);
-  Application.CreateForm(TfrmQuantize, frmQuantize);
-  Application.CreateForm(TfrmBenchmark, frmBenchmark);
-  Application.CreateForm(TfrmSettings, frmSettings);
 
   TfrmSplash.ShowSplash;
 
@@ -69,7 +59,6 @@ begin
   Sleep(850);
 
   TfrmSplash.UpdateSplash('Menyiapkan antarmuka utama...', 75);
-  Application.CreateForm(TfrmMain, frmMain);
 
   TfrmSplash.UpdateSplash('Sistem siap.', 100);
   Sleep(800);
