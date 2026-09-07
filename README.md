@@ -39,15 +39,6 @@
 
 
 
----
-
-## 🚀 Quick Start
-
-1. Clone this repository to your local machine:
-```bash
-git clone https://github.com/username/LlamaControlCenter.git
-
-```
 
 ---
 ## Download
